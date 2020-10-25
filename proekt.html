@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Personal Web Page!</title>
+      <style type= "text/css">
+        nav {  background-color: rgb(116, 28, 28);
+               text-decoration:none;
+               font-size:18px; 
+               padding: 5px 10px; 
+               display:ruby-base; 
+               transition: all 0.5s ease 0s;
+               margin-right:0%;
+               margin-left: 0%;
+            }
+        .img     {margin: 80px;
+                  margin-left: 45%;
+                  margin-right: 25%;
+                 -webkit-transition: -webkit-transform 3s; 
+                 -moz-transition: -moz-transform 3s; 
+                 -o-transition: -o-transform 3s; 
+                 transition: transform 3s;}
+        .img:hover  {-webkit-transform: rotate(360deg) scale(2, 2); 
+                     -moz-transform: rotate(360deg) scale(2, 2);
+                     -o-transform: rotate(360deg) scale(2, 2); 
+                     transform: rotate(360deg) scale(2, 2); }
+        span    {color:rgb(255, 113, 113);}
+        em      {color:rgb(136, 117, 243)}
+        nav a   {text-decoration: none;
+                 color:cornsilk;
+                 padding-right: 15px;
+                 padding-left: 60px
+                 }
+        a:hover {text-decoration:overline;
+                  color:rgb(254, 255, 255)}
+
+        nav a:hover  {  background-color:#68aef5; 
+                        color:#ecdc63; 
+                        transition: all 0.5s ease 0s;
+                      }
+        .h1, .h2 {text-align: center;
+                 color:darkslategrey;
+                 font-family: cursive, sans-serif;}
+        h2       {text-align: center;
+                  }
+        .start   {background-image:url(pozadinaheader3.jpg) ;
+                  background-repeat:repeat;
+                  background-position:50% center;
+                  background-origin:content-box;
+                  background-attachment:fixed;
+                  background-size: auto;
+                  padding-bottom: 20px;}
+        .text     {     text-align: center;
+                        font-size: 20px;
+                        width: 99%;
+                        position: relative;
+                        font-family:fantasy, sans-serif; 
+                        color:blueviolet}
+        h1 span  {
+                   font-weight:400;}
+        .content  {
+                     margin-bottom:60px;
+                     width:750px;
+                  }           
+        section {
+                 width:100%; 
+                 max-width:1200px; 
+                 margin:0px auto; }
+        .content p{
+                    font-size:14px; 
+                    line-height:20px; 
+                    color:#ee1818; 
+                    text-align:justify;
+                    }
+        .thickdashed  { border-width: thick;
+                         border-style: dashed;
+                         border-radius: 10px;
+                         padding-bottom: .4%;
+                         padding-top: .4%;
+                         background-color: aqua;} 
+      </style>
+   </head>
+
+   <body>
+      <header class='start'>
+         <h1 class='h1'>Welcome to my first project using HTML5 and CSS3!</h1> 
+         <h2 class='h2'>This time,I'm making a personal web site so you all can get to know me! &#128516;</h2>
+      </header>
+        <header>
+            <section>
+                <nav> 
+                    <img src="logo.jpg" height="25" width="25" alt="FEIT logo">
+                    <a href='#Home'>HOME</a>
+                    <a href='#Favorite'>FAVORITE THINGS</a>
+                    <a href='#Gallery'>GALLERY</a>
+                    <a href='#Blog'>BLOG</a>
+                    <a href='#Survey'>SURVEY</a>
+                    <a href='#Contact'>CONTACT INFO</a>
+                </nav>
+                
+            </section>
+        </header>
+
+      <section id="Home" class="content">
+        <h2 class='thickdashed text'>HOME</h2>
+        <section>
+            Hi there! My name is Martina Petrovska, I'm 21 years old 
+            and I come from Ohrid, Macedonia. I'm a 4th year student of the
+            <strong><em>Faculty of Electrical Engineering and Information Technologies</em></strong>, precisely
+            a major in <strong><em>Computer Hardware Engineering and Electronics</em></strong>. This year, since
+            it's my last, I wanted to broaden my knowledge and learn something about 
+            web development and the primary code languages. 
+
+            <p>I have experience in the following softwares packages:
+                <ul>
+                    <li><a href="https://www.mathworks.com/products/matlab.html">MATLAB<sup>&reg;</sup></a></li>
+                    <li><a href="https://www.orcad.com/resources/orcad-downloads">OrCAD<sup>&reg;</sup> CAPTURE<sup>&reg;</sup> PSPICE</a></li>
+                    <li><a href="https://www.microchip.com/mplab/mplab-x-ide">MPLAB<sup>&reg;</sup></a></li>
+                    <li><a href="https://www.python.org/">PYTHON</a></li>
+                    <li><span><strong>And hopefully many more!</strong></span></li>
+                </ul>
+            </p>
+            <p>If we talk about personal strenghts:
+                <ul>
+                    <li>Hard-working</li>
+                    <li>Perfectionist <mark>(kind of a flaw too &#128517;)</mark></li>
+                    <li>Determined</li>
+                    <li>Good team player</li>
+                    <li>Ambitious</li>
+                </ul>
+            </p>
+            <P style="text-align:center;"><strong>
+                And if we talk about the future:</strong>
+                <p><img class='img' src="theoffice.jpg" width = "150" height = "150" 
+                         alt="The Office meme">
+                </p>
+            </P>
+        </section>
+      </section>
+
+        <section id="Favorite" class="content">
+            <h2 class='thickdashed text'>FAVORITE THINGS</h2>
+            <section>
+                <details>
+                    <summary><strong>MUSIC &#127928;</strong></summary>
+                    <p>Mostly I listen to all kinds of music, depending on my day, but my absolute
+                        all time favorite genres are rock and metal.
+                          <details>
+                             <summary>ROCK MUSIC</summary>
+                                <details>
+                                    <summary style="text-indent: 1em;">Favorite bands</summary>
+                                    <ul>
+                                        <li><a href="https://www.paramore.net/splash?ref=https%3A//at.search.yahoo.com/">
+                                        Paramore</a></li>
+                                        <li><a href="https://www.the-scorpions.com/">
+                                        Scorpions</a></li>
+                                        <li><a href="https://systemofadown.com/">
+                                        System of a down</a></li>
+                                    </ul>
+                                </details>
+                                <details>
+                                    <summary style="text-indent: 1em;">Favorite songs</summary>
+                                    <ul>
+                                        <li><a href="https://www.youtube.com/watch?v=_FrOQC-zEog&ab_channel=HELLOSEMPA">
+                                        Pink Floyd-Comfortably Numb</a></li>
+                                        <li><a href="https://www.youtube.com/watch?v=oR4uKcvQbGQ&ab_channel=InnerMusicLove">
+                                        Boston-More Than A Feeling</a></li>
+                                        <li><a href="https://www.youtube.com/watch?v=egMWlD3fLJ8&ab_channel=RetrospectiveSoundtrack">
+                                        Steppenwolf-Born To Be Wild</a></li>
+                                    </ul>
+                                </details>
+                            </details>
+                          <details>
+                              <summary>METAL</summary>
+                              <details>
+                                <summary style="text-indent: 1em;">Favorite bands</summary>
+                                <ul>
+                                    <li><a href="https://www.blacksabbath.com/welcome.html">
+                                    Black Sabbath</a></li>
+                                    <li><a href="https://www.disturbed1.com/">Disturbed</a></li>
+                                    <li><a href="https://www.metallica.com/">Metallica</a></li>
+                                </ul>
+                              </details>
+                              <details>
+                                <summary style="text-indent: 1em;">Favorite songs</summary>
+                                <ul>
+                                    <li><a href="https://www.youtube.com/watch?v=J51LPlP-s9o&ab_channel=gibsonscottyozzy">
+                                    Iron Maiden-Hallowed be thy name</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=fMAAMfHgO4Q&ab_channel=OzzyOsbourne">
+                                    Ozzy Osbourn-Under the graveyard</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=S5TnPjOd_To&ab_channel=JacobWright">
+                                    Metallica-Wherever I may roam</a></li>
+                                </ul>
+                              </details>
+                          </details>
+                    </p>
+                </details>
+                <details>
+                    <summary>MOVIES &#127910;</summary>
+                        <details>
+                            <summary style="text-indent: 1em;"><mark>BIG</mark>Horror Fan</summary>
+                            <p>Here are the posters of some of my favorite horror movies.</p>
+                            <p>
+                                <figure>
+                                    <img src="insidious.jpg" height="230" width="230" alt="Insidious movie poster">
+                                    <figcaption><em>Poster for the movie 'INSIDIOUS'</em></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="getout.jpg" height="230" width="230" alt="Get Out movie poster">
+                                    <figcaption><em>Poster for the movie 'GET OUT'</em></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="sinister.jpg" height="230" width="230" alt="Sinister movie poster">
+                                    <figcaption><em>Poster for the movie 'SINISTER'</em></figcaption>
+                               </figure>
+                            </p>
+                        </details>
+                        <details>
+                            <summary style="text-indent: 1em;">Other must-watch movies</summary>
+                                <figure>
+                                    <img src="windriver.jpg" height="230" width="230" alt="Wind River">
+                                    <figcaption><em>Poster for the movie 'WIND RIVER'</em></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="seven.jpg" height="230" width="230" alt="Seven">
+                                    <figcaption><em>Poster for the movie 'SEVEN'</em></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="zodiac.jpg" height="230" width="230" alt="Zodiac">
+                                    <figcaption><em>Poster for the movie 'ZODIAC'</em></figcaption>
+                                </figure>
+                        </details>
+                </details>
+                <details>
+                    <summary>FOOD &#127858;</summary>
+                        <details>
+                            <summary style="text-indent: 1em;">VEGGIE WRAP</summary>
+                                <details>
+                                    <summary style="text-indent: 2em;">Image</summary>
+                                    <figure>
+                                        <img src="veggie.jpg" width="600" height="300" alt="Veggie Wrap">
+                                        <figcaption><em>Veggie Wrap</em></figcaption>
+                                    </figure>
+                                </details>
+                                <details>
+                                    <summary style="text-indent: 2em;">Recipe</summary>
+                                    <p>Click<a href="https://www.culinaryhill.com/ultimate-veggie-wrap/"> 
+                                    <strong>here</strong></a>for the recipe</p>
+                                </details>
+                        </details>
+                        <details>
+                            <summary style="text-indent: 1em;">CHICKEN CURRY</summary>
+                                <details>
+                                    <summary style="text-indent: 2em;">Image</summary>
+                                    <figure>
+                                        <img src="curry.jpg" width="300" height="300" alt="Image for chicken curry">
+                                        <figcaption><em>Chicken curry</em></figcaption>
+                                    </figure>
+                                </details>
+                                <details>
+                                    <summary style="text-indent: 2em;">Recipe</summary>
+                                    <p>Click<a href="https://www.cookingclassy.com/chicken-curry/""> 
+                                    <strong>here</strong></a>for the recipe</p>
+                                </details>
+                        </details>
+                </details>
+            </section>
+        </section>
+
+        <section id="Gallery" class="content">
+            <h2 class='thickdashed text'>GALLERY</h2>
+        </section>
+
+        <section id="Blog" class="content">
+            <h2 class='thickdashed text'>BLOG</h2>
+        </section>
+
+        <section id="Survey" class="content">
+            <h2 class='thickdashed text'>SURVEY</h2>
+        </section>
+
+        <section id="Contact" class="content">
+            <h2 class='thickdashed text'>CONTACT</h2>
+        </section>
+   </body>
+</html>
