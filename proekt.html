@@ -5,7 +5,8 @@
       <meta charset = "utf-8">
       <title>Personal Web Page!</title>
       <style type= "text/css">
-        nav {  background-color: rgb(116, 28, 28);
+        body {background-color: rgb(185, 178, 231);}
+        nav {  background-color: rgb(131, 80, 80);
                text-decoration:none;
                font-size:18px; 
                padding: 5px 10px; 
@@ -15,7 +16,7 @@
                margin-left: 0%;
             }
         .img     {margin: 80px;
-                  margin-left: 45%;
+                  margin-left: 40%;
                   margin-right: 25%;
                  -webkit-transition: -webkit-transform 3s; 
                  -moz-transition: -moz-transform 3s; 
@@ -50,35 +51,66 @@
                   background-origin:content-box;
                   background-attachment:fixed;
                   background-size: auto;
-                  padding-bottom: 20px;}
+                  padding-bottom: 20px;
+                  padding-top: 30px;}
         .text     {     text-align: center;
                         font-size: 20px;
                         width: 99%;
                         position: relative;
                         font-family:fantasy, sans-serif; 
-                        color:blueviolet}
+                        color:rgb(47, 22, 71)}
         h1 span  {
-                   font-weight:400;}
+                   font-weight:400;
+                   }
         .content  {
                      margin-bottom:60px;
                      width:750px;
+                     text-align:justify;
+                     font-size:14px;
+                     line-height:20px;
                   }           
-        section {
-                 width:100%; 
-                 max-width:1200px; 
-                 margin:0px auto; }
-        .content p{
-                    font-size:14px; 
-                    line-height:20px; 
-                    color:#ee1818; 
-                    text-align:justify;
-                    }
+        section, form, p {
+                       width:100%; 
+                       max-width:1200px; 
+                       margin:0px auto; 
+                       font-family:cursive, sans-serif;
+                       font-weight: 700;}
         .thickdashed  { border-width: thick;
                          border-style: dashed;
                          border-radius: 10px;
                          padding-bottom: .4%;
                          padding-top: .4%;
-                         background-color: aqua;} 
+                         background-color: rgb(217, 172, 255);} 
+        .leftcolumn {
+                        float: left;
+                        width: 30%;
+                        }
+        .rightcolumn {
+                        float: right;
+                        width: 30%;
+                        padding-left: 15px;
+                      }
+        .middlecolumn {width:50%;
+                        float:inline-start;
+                        }
+        .card      {
+                    padding: 20px;
+                    margin-top: 20px;
+                    }
+        .imgblog   {width:200%;}
+        .imgblog:hover {width:250%;
+                        }
+        .imghome       {width:300px;;
+                        height:300px;}
+        .imghome:hover {width:380px;
+                        height: 380px;}
+        .card p { background-color: lightskyblue;
+                    margin-bottom: .5em;
+                    font-family: arial, helvetica, sans-serif; }
+        .distance {margin-left: 196px;}
+        form input   {box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+                        border-radius: 10px;
+                        font-family: inherit;}  
       </style>
    </head>
 
@@ -111,14 +143,16 @@
             a major in <strong><em>Computer Hardware Engineering and Electronics</em></strong>. This year, since
             it's my last, I wanted to broaden my knowledge and learn something about 
             web development and the primary code languages. 
-
-            <p>I have experience in the following softwares packages:
+            <div style="float:right;">
+                <img class="imghome" src="slikahome.png" alt="slika1">
+            </div>
+            <p>I have experience in the following software packages:
                 <ul>
                     <li><a href="https://www.mathworks.com/products/matlab.html">MATLAB<sup>&reg;</sup></a></li>
                     <li><a href="https://www.orcad.com/resources/orcad-downloads">OrCAD<sup>&reg;</sup> CAPTURE<sup>&reg;</sup> PSPICE</a></li>
                     <li><a href="https://www.microchip.com/mplab/mplab-x-ide">MPLAB<sup>&reg;</sup></a></li>
                     <li><a href="https://www.python.org/">PYTHON</a></li>
-                    <li><span><strong>And hopefully many more!</strong></span></li>
+                    <li><span><strong>And hopefully many more in the future!</strong></span></li>
                 </ul>
             </p>
             <p>If we talk about personal strenghts:
@@ -130,8 +164,11 @@
                     <li>Ambitious</li>
                 </ul>
             </p>
-            <P style="text-align:center;"><strong>
-                And if we talk about the future:</strong>
+            <br>
+            <br>
+            <br>
+            <P style="text-align:center;"><strong><mark>
+                And if we talk about the future:</mark></strong>
                 <p><img class='img' src="theoffice.jpg" width = "150" height = "150" 
                          alt="The Office meme">
                 </p>
@@ -270,18 +307,212 @@
 
         <section id="Gallery" class="content">
             <h2 class='thickdashed text'>GALLERY</h2>
+                <img src="slika1.jpg" width="240" height="300" alt="slika1">
+                <img src="slika2.png" width="240" height="300" alt="slika2">
+                <img src="slika4.png" width="240" height="300" alt="slika3">
+                <p><label>
+                    <textarea name = "comments"
+                       rows = "3" cols = "31" placeholder="Comment here"></textarea>
+                </label>
+                <label>
+                    <textarea name = "comments"
+                       rows = "3" cols = "31" placeholder="Comment here"></textarea>
+                </label>  
+                <label>
+                    <textarea name = "comments"
+                       rows = "3" cols = "31" placeholder="Comment here"></textarea>
+                </label></p>
+                <form>
+                    <input type = "submit" value = "Like!">
+                    <input class="distance" type = "submit" value = "Like!">
+                    <input class="distance" type = "submit" value = "Like!">
+                </form>
         </section>
 
         <section id="Blog" class="content">
             <h2 class='thickdashed text'>BLOG</h2>
+            <h3 style="text-align: center; margin-top: 10px; color:darkslategray">
+                Welcome to a place where you can find usefull and interesting blogs
+                about all sorts of toppics!</h3>
+            <br>
+            <h2 style="margin-bottom: 10px;">THAT GUY IN RIO DE JANEIRO WHO TOLD ME I CAN’T JOIN THE BOYS PLAY FOOTBALL</h2>
+            <div class="leftcolumn">
+                <div class="card">
+                    <h4>Image that best describes the text</h4>
+                    <img class="imgblog" src="Trisha.jpg" alt="image">
+                </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="card">
+                    <h4 style="margin-left: 20px;">About the Author</h4>
+                    <img style="height:100px; margin-left: 30px;" src="blogg.png" alt="image">
+                    <p style="width:100%; height:180px; overflow:scroll; margin-right: 10px; ">HELLO! MY NAME IS TRISHA.<br> I didn’t quit my job to travel the world. I made a job out of traveling and you can do it, too!
+                             I’ve been traveling the world non-stop for 11 years now without going home. I’d like to 
+                            believe I am not traveling anymore – I just choose to be somewhere else all the time. </textarea></p>
+                </div>
+            </div>
+            <br>
+            <div class="middlecolumn">
+                <div class="card">
+                    <br>
+                    <p style="width:800px; height:200px; overflow:scroll; ">
+                        Editor’s Note: This happened in 2014 when the writer, 
+                        Trisha, was staying in Rio de Janeiro. This article does not imply that these events 
+                        are relevant to today’s position of women in Brazil. The writer has not visited Rio since 
+                        2015 but is responsible for the events, characters, and timeline of this story.
+                        Going to the World Cup 2014 has always been a goal for me. On June 12, 2014, I reached Rio de 
+                        Janeiro, just in time for the opening of the World Cup. Brazil, as the world knows, is a football 
+                        addicted nation. They even have the ball in their flag! Coming from a country who plays basketball 
+                        as a national sport (we got it from our American influence), I was very happy to be in an environment 
+                        where everyone breathes my favorite sport.
+                        During the World Cup, my friends and I had a routine. Every morning, if we are not 
+                        hung over from the previous night’s games, we hang out at the beach in Copacabana or Ipanema. 
+                        The beach was always full of Argentines, Germans, and Brazilians who came from all over the world
+                        to witness a great sporting event. Beaches in Rio are beautiful and is part of the carioca culture. 
+                        Even if it was full, we always found a place to lay our beach towels. It never stopped us from 
+                        going to the beach. I believe part of the Rio beaches culture is being full of people all the time, 
+                        and that it represents the city’s chill out vibe – I kept wondering if these people even go to work 
+                        as the beaches are loaded even on a Monday afternoon.
+                        For most of my teenage years, I played football. It was my means of getting into good schools in my country. 
+                        In the Philippines, sports scholarships are very common in schools so if you have are a sports monster as a kid 
+                        (especially our well-funded basketball), you will have the edge to go to school for free.
+                            
+                        But being part of the school’s football team made me wake up early to go to school. I remember my morning checklist 
+                        not being books, notebooks, or school projects, but shin guards, long socks, short socks, jersey, shorts, and spikes. 
+                        We may not be the official Philippine team but my team is the best in scholastic leagues. Futsal, the 5-aside indoor football 
+                        is what we are good at. We didn’t have a space for field football as the men’s team were always a priority in using it so we 
+                        did our best to train futsal in the basketball court, which we share with the women’s basketball team. As they are priority, too 
+                        (yep, Philippines is a basketball country), we have to wait for their training to finish from 7 pm – 9 pm.
+                    </p>
+                </div>
+            </div>
+            <form>
+                <p>
+                    <label>How did you like this text?:
+                        <input type = "number" 
+                             min = "1"
+                            max = "10"
+                            step = "1"
+                            value = "5" />
+                    </label> (Enter a number between 1 and 10)
+                </p>
+                <br>
+                <p><label>If you have any personal experiences concerning the subject
+                    of this text, feel free to write it here:<br>
+                    <textarea name = "comments"
+                       rows = "5" cols = "60" placeholder="Comment here"></textarea>
+                </label></p>
+                <p>
+                    <input type = "submit" value = "Submit">
+                    <input type = "reset" value = "Clear">
+                </p>
+                <br>
+                <p>Or send me your story via email:<a href="mailto:petrovskamartina20@yahoo.com">
+                    petrovskamartina20@yahoo.com</a></p>
+            </form>
+            <footer>
+                <h6 style="font-weight:600;">&copy;<strong>The previous text and images have been taken from a blog of the website</strong>
+                    <a href="https://www.psimonmyway.com/">Ps.I'm on my way.</a>
+                </h6>
+            </footer>
         </section>
 
-        <section id="Survey" class="content">
+        <form id="Survey" class="content">
             <h2 class='thickdashed text'>SURVEY</h2>
-        </section>
+            <p>It would mean a lot to me if you could spare a few minutes
+                to complete the following survey to let me know how your overall experience was
+                visiting this site!
+            </p>
+            <br>
+            <br>
+            <p><label>Name:
+                <input name = "name" type = "text" size = "20" maxlength = "15">
+            </label></p>
+            <br>
+            <p><label>Surname:
+                <input name = "surname" type = "text" size = "25"
+                   maxlength = "15">
+            </label></p>
+            <br>
+            <p>
+                <label>Email:
+                   <input type = "email" placeholder = "username@domain.com" 
+                      required />
+                </label>
+            </p>
+            <br>
+            <p>
+                <label>Date of birth:
+                   <input type = "date" required /> 
+                </label>
+            </p>
+            <br>
+            <p>
+                <label>Date you visited this site:
+                   <input type = "date" required /> 
+                </label>
+            </p>
+            <br>
+            <p>
+                <label>Phone number:
+                   <input type = "tel" placeholder = "(###) ###-####" 
+                      pattern = "\(\d{3}\) +\d{3}-\d{4}" />
+                </label>
+            </p>
+            <br>
+            <p>
+                Your favorite tab:<br>
+                <label>Home
+                   <input name = "thingsliked" type = "radio" 
+                      value = "Home"></label>
+                <label>Favorite things
+                   <input name = "thingsliked" type = "radio" 
+                      value = "Favorite"></label>
+                <label>Gallery
+                   <input name = "thingsliked" type = "radio" 
+                      value = "Gallery"></label> 
+                <label>Blog 
+                   <input name = "thingsliked" type = "radio" 
+                      value = "Blog"></label>
+            </p>
+            <br>
+            <p><label>Any comments and constructive criticisms are encouraged!:<br>
+                <textarea name = "comments"
+                   rows = "5" cols = "60" placeholder="Comment here"></textarea>
+            </label></p>
+            <br>
+            <p>
+                <label>Rate your overall experience: 
+                   <select name = "rating">
+                      <option selected>Great</option>
+                      <option>9</option>
+                      <option>8</option>
+                      <option>7</option>
+                      <option>6</option>
+                      <option>5</option>
+                      <option>4</option>
+                      <option>3</option>
+                      <option>2</option>
+                      <option>Terrible</option>
+                   </select>
+                </label>
+            </p>
+            <br>
+            <p>
+                <input type = "submit" value = "Submit">
+                <input type = "reset" value = "Clear">
+            </p>
+        </form>
 
         <section id="Contact" class="content">
             <h2 class='thickdashed text'>CONTACT</h2>
+            <address>
+                If you have any questions or suggestions you can contact me via email:<br>
+                <a href="mailto:petrovskamartina20@yahoo.com">petrovskamartina20@yahoo.com</a><br>
+                Or<br>
+                <a href="https://www.facebook.com/martina.petrovska.5/">Facebook</a><br>
+                <a href="https://www.instagram.com/martinaa.petrovska/">Instagram</a>
+            </address>
         </section>
    </body>
 </html>
