@@ -6,7 +6,47 @@
       <title>Personal Web Page!</title>
       <style type= "text/css">
         body {background-color: rgb(185, 178, 231);}
-        nav {  background-color: rgb(131, 80, 80);
+        .dropdown {
+                    float:left;
+                    overflow: hidden;
+                      }
+
+        .dropdown .droplist {
+                  font-size: 18px;   
+                  border: none;
+                  color: white;
+                  padding: 14px 16px;
+                  background-color: inherit;
+                  font-family: inherit;
+                           }
+
+        .dropdown-content {
+                            display: none;
+                            position:inherit;
+                            background-color:inherit;
+                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                            }
+
+        .dropdown-content .hell {
+            float:none;
+            color: rgb(66, 19, 19);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            }
+
+        .dropdown-content .hell:hover {
+            background-color: rgb(110, 66, 66);
+            color: black;
+            }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color:#68aef5;
+            }
+  
+        nav button, div nav {  background-color: rgb(131, 80, 80);
                text-decoration:none;
                font-size:18px; 
                padding: 5px 10px; 
@@ -14,7 +54,35 @@
                transition: all 0.5s ease 0s;
                margin-right:0%;
                margin-left: 0%;
+               overflow: hidden;
+               font-family: cursive;
+               text-align:center;
             }
+        .starth {background-color:#68aef5}
+        .hell  {-webkit-appearance:none;
+                background:none;
+                border:0;
+                -webkit-box-shadow:none;
+                box-shadow:none;
+                color:inherit;
+                cursor:pointer;
+                display:inline;
+                font-size:inherit;
+                margin:0;
+                padding:0;
+                text-align:inherit;
+                text-decoration: none;
+                }
+        .hell:active,
+        .hell:hover,
+        .hell:focus {color: inherit;
+                  font-size: 18px;   
+                  border: none;
+                  color: white;
+                  padding: 14px 16px;
+                  background-color: #68aef5;
+                  font-family: inherit;
+                    }
         .img     {margin: 80px;
                   margin-left: 40%;
                   margin-right: 25%;
@@ -28,15 +96,19 @@
                      transform: rotate(360deg) scale(2, 2); }
         span    {color:rgb(255, 113, 113);}
         em      {color:rgb(136, 117, 243)}
-        nav a   {text-decoration: none;
+        nav .hell   {text-decoration: none;
                  color:cornsilk;
                  padding-right: 15px;
-                 padding-left: 60px
+                 padding-left: 15px;
+                 float: left;
+                 display: block;
+                 color: #f2f2f2;
+                 text-align: center;
+                 padding: 14px 16px;
+                 text-decoration: none;
                  }
-        a:hover {text-decoration:overline;
-                  color:rgb(254, 255, 255)}
-
-        nav a:hover  {  background-color:#68aef5; 
+        input:hover,.hell:hover {color:azure;}
+        .dropdown:hover{  background-color:#68aef5;
                         color:#ecdc63; 
                         transition: all 0.5s ease 0s;
                       }
@@ -69,18 +141,13 @@
                      font-size:14px;
                      line-height:20px;
                   }           
-        section, form, p {
+        div, form, p {
                        width:100%; 
                        max-width:1200px; 
                        margin:0px auto; 
                        font-family:cursive, sans-serif;
                        font-weight: 700;}
-        .thickdashed  { border-width: thick;
-                         border-style: dashed;
-                         border-radius: 10px;
-                         padding-bottom: .4%;
-                         padding-top: .4%;
-                         background-color: rgb(217, 172, 255);} 
+        .div {display:none;}
         .leftcolumn {
                         float: left;
                         width: 30%;
@@ -112,31 +179,37 @@
                         border-radius: 10px;
                         font-family: inherit;}  
       </style>
+      
    </head>
 
-   <body>
+   <body id="body">
       <header class='start'>
          <h1 class='h1'>Welcome to my first project using HTML5 and CSS3!</h1> 
          <h2 class='h2'>This time,I'm making a personal web site so you all can get to know me! &#128516;</h2>
       </header>
-        <header>
-            <section>
-                <nav> 
-                    <img src="logo.jpg" height="25" width="25" alt="FEIT logo">
-                    <a href='#Home'>HOME</a>
-                    <a href='#Favorite'>FAVORITE THINGS</a>
-                    <a href='#Gallery'>GALLERY</a>
-                    <a href='#Blog'>BLOG</a>
-                    <a href='#Survey'>SURVEY</a>
-                    <a href='#Contact'>CONTACT INFO</a>
+      <header>
+            <div>
+                <nav>
+                    <button type="button" id="H" onclick="content1()" class="starth hell" >HOME</button>
+                    <span class="dropdown">
+                     <button type="button" class="droplist hell ">FAVORITE THINGS 
+                       <i class="fa fa-caret-down"></i>
+                     </button>
+                     <span class="dropdown-content ">
+                       <button class="hell" type="button" id="M" onclick="content2()">MUSIC</button>
+                       <button class="hell" type="button" id="MO"  onclick="content3()">MOVIES</button>
+                       <button class="hell" type="button" id="F" onclick="content4()">FOOD</button>
+                     </span>
+                    </span>
+                    <button class="hell" type="button" id="G" onclick="content6()" >GALLERY</button>
+                    <button class="hell" type="button" id="B" onclick="content7()">BLOG</button>
+                    <button class="hell" type="button" id="S" onclick="content8()">SURVEY</button>
+                    <button class="hell" type="button" id="C" onclick="content9()">CONTACT INFO</button>
                 </nav>
-                
-            </section>
-        </header>
-
-      <section id="Home" class="content">
-        <h2 class='thickdashed text'>HOME</h2>
-        <section>
+            </div>
+      </header>
+      <div id="Home" class="content">
+        <div>
             Hi there! My name is Martina Petrovska, I'm 21 years old 
             and I come from Ohrid, Macedonia. I'm a 4th year student of the
             <strong><em>Faculty of Electrical Engineering and Information Technologies</em></strong>, precisely
@@ -173,14 +246,13 @@
                          alt="The Office meme">
                 </p>
             </P>
-        </section>
-      </section>
+          </div>
+        </div>
 
-        <section id="Favorite" class="content">
-            <h2 class='thickdashed text'>FAVORITE THINGS</h2>
-            <section>
-                <details>
-                    <summary><strong>MUSIC &#127928;</strong></summary>
+      <div id="Favorite" class="content div">
+            <div>
+                <details id="Music">
+                    <summary ><strong>MUSIC &#127928;</strong></summary>
                     <p>Mostly I listen to all kinds of music, depending on my day, but my absolute
                         all time favorite genres are rock and metal.
                           <details>
@@ -233,7 +305,7 @@
                           </details>
                     </p>
                 </details>
-                <details>
+                <details id="Movies">
                     <summary>MOVIES &#127910;</summary>
                         <details>
                             <summary style="text-indent: 1em;"><mark>BIG</mark>Horror Fan</summary>
@@ -269,7 +341,7 @@
                                 </figure>
                         </details>
                 </details>
-                <details>
+                <details id="Food">
                     <summary>FOOD &#127858;</summary>
                         <details>
                             <summary style="text-indent: 1em;">VEGGIE WRAP</summary>
@@ -302,217 +374,316 @@
                                 </details>
                         </details>
                 </details>
-            </section>
-        </section>
+              </div>
+      </div>
 
-        <section id="Gallery" class="content">
-            <h2 class='thickdashed text'>GALLERY</h2>
-                <img src="slika1.jpg" width="240" height="300" alt="slika1">
-                <img src="slika2.png" width="240" height="300" alt="slika2">
-                <img src="slika4.png" width="240" height="300" alt="slika3">
-                <p><label>
-                    <textarea name = "comments"
-                       rows = "3" cols = "31" placeholder="Comment here"></textarea>
-                </label>
-                <label>
-                    <textarea name = "comments"
-                       rows = "3" cols = "31" placeholder="Comment here"></textarea>
-                </label>  
-                <label>
-                    <textarea name = "comments"
-                       rows = "3" cols = "31" placeholder="Comment here"></textarea>
-                </label></p>
-                <form>
-                    <input type = "submit" value = "Like!">
-                    <input class="distance" type = "submit" value = "Like!">
-                    <input class="distance" type = "submit" value = "Like!">
-                </form>
-        </section>
-
-        <section id="Blog" class="content">
-            <h2 class='thickdashed text'>BLOG</h2>
-            <h3 style="text-align: center; margin-top: 10px; color:darkslategray">
-                Welcome to a place where you can find usefull and interesting blogs
-                about all sorts of toppics!</h3>
-            <br>
-            <h2 style="margin-bottom: 10px;">THAT GUY IN RIO DE JANEIRO WHO TOLD ME I CAN’T JOIN THE BOYS PLAY FOOTBALL</h2>
-            <div class="leftcolumn">
-                <div class="card">
-                    <h4>Image that best describes the text</h4>
-                    <img class="imgblog" src="Trisha.jpg" alt="image">
-                </div>
-            </div>
-            <div class="rightcolumn">
-                <div class="card">
-                    <h4 style="margin-left: 20px;">About the Author</h4>
-                    <img style="height:100px; margin-left: 30px;" src="blogg.png" alt="image">
-                    <p style="width:100%; height:180px; overflow:scroll; margin-right: 10px; ">HELLO! MY NAME IS TRISHA.<br> I didn’t quit my job to travel the world. I made a job out of traveling and you can do it, too!
-                             I’ve been traveling the world non-stop for 11 years now without going home. I’d like to 
-                            believe I am not traveling anymore – I just choose to be somewhere else all the time. </textarea></p>
-                </div>
-            </div>
-            <br>
-            <div class="middlecolumn">
-                <div class="card">
-                    <br>
-                    <p style="width:800px; height:200px; overflow:scroll; ">
-                        Editor’s Note: This happened in 2014 when the writer, 
-                        Trisha, was staying in Rio de Janeiro. This article does not imply that these events 
-                        are relevant to today’s position of women in Brazil. The writer has not visited Rio since 
-                        2015 but is responsible for the events, characters, and timeline of this story.
-                        Going to the World Cup 2014 has always been a goal for me. On June 12, 2014, I reached Rio de 
-                        Janeiro, just in time for the opening of the World Cup. Brazil, as the world knows, is a football 
-                        addicted nation. They even have the ball in their flag! Coming from a country who plays basketball 
-                        as a national sport (we got it from our American influence), I was very happy to be in an environment 
-                        where everyone breathes my favorite sport.
-                        During the World Cup, my friends and I had a routine. Every morning, if we are not 
-                        hung over from the previous night’s games, we hang out at the beach in Copacabana or Ipanema. 
-                        The beach was always full of Argentines, Germans, and Brazilians who came from all over the world
-                        to witness a great sporting event. Beaches in Rio are beautiful and is part of the carioca culture. 
-                        Even if it was full, we always found a place to lay our beach towels. It never stopped us from 
-                        going to the beach. I believe part of the Rio beaches culture is being full of people all the time, 
-                        and that it represents the city’s chill out vibe – I kept wondering if these people even go to work 
-                        as the beaches are loaded even on a Monday afternoon.
-                        For most of my teenage years, I played football. It was my means of getting into good schools in my country. 
-                        In the Philippines, sports scholarships are very common in schools so if you have are a sports monster as a kid 
-                        (especially our well-funded basketball), you will have the edge to go to school for free.
-                            
-                        But being part of the school’s football team made me wake up early to go to school. I remember my morning checklist 
-                        not being books, notebooks, or school projects, but shin guards, long socks, short socks, jersey, shorts, and spikes. 
-                        We may not be the official Philippine team but my team is the best in scholastic leagues. Futsal, the 5-aside indoor football 
-                        is what we are good at. We didn’t have a space for field football as the men’s team were always a priority in using it so we 
-                        did our best to train futsal in the basketball court, which we share with the women’s basketball team. As they are priority, too 
-                        (yep, Philippines is a basketball country), we have to wait for their training to finish from 7 pm – 9 pm.
-                    </p>
-                </div>
-            </div>
+      <div class="content div" id="Gallery" >
+            <img src="slika1.jpg" width="240" height="300" alt="slika1">
+            <img src="slika2.png" width="240" height="300" alt="slika2">
+            <img src="slika4.png" width="240" height="300" alt="slika3">
+            <p><label>
+                <textarea name = "comments"
+                   rows = "3" cols = "31" placeholder="Comment here"></textarea>
+            </label>
+            <label>
+                <textarea name = "comments"
+                   rows = "3" cols = "31" placeholder="Comment here"></textarea>
+            </label>  
+            <label>
+                <textarea name = "comments"
+                   rows = "3" cols = "31" placeholder="Comment here"></textarea>
+            </label></p>
             <form>
-                <p>
-                    <label>How did you like this text?:
-                        <input type = "number" 
-                             min = "1"
-                            max = "10"
-                            step = "1"
-                            value = "5" />
-                    </label> (Enter a number between 1 and 10)
-                </p>
-                <br>
-                <p><label>If you have any personal experiences concerning the subject
-                    of this text, feel free to write it here:<br>
-                    <textarea name = "comments"
-                       rows = "5" cols = "60" placeholder="Comment here"></textarea>
-                </label></p>
-                <p>
-                    <input type = "submit" value = "Submit">
-                    <input type = "reset" value = "Clear">
-                </p>
-                <br>
-                <p>Or send me your story via email:<a href="mailto:petrovskamartina20@yahoo.com">
-                    petrovskamartina20@yahoo.com</a></p>
+                <input type = "submit" value = "Like!">
+                <input class="distance" type = "submit" value = "Like!">
+                <input class="distance" type = "submit" value = "Like!">
             </form>
-            <footer>
-                <h6 style="font-weight:600;">&copy;<strong>The previous text and images have been taken from a blog of the website</strong>
-                    <a href="https://www.psimonmyway.com/">Ps.I'm on my way.</a>
-                </h6>
-            </footer>
-        </section>
-
-        <form id="Survey" class="content">
-            <h2 class='thickdashed text'>SURVEY</h2>
-            <p>It would mean a lot to me if you could spare a few minutes
-                to complete the following survey to let me know how your overall experience was
-                visiting this site!
-            </p>
-            <br>
-            <br>
-            <p><label>Name:
-                <input name = "name" type = "text" size = "20" maxlength = "15">
-            </label></p>
-            <br>
-            <p><label>Surname:
-                <input name = "surname" type = "text" size = "25"
-                   maxlength = "15">
-            </label></p>
-            <br>
+      </div>
+      <div id="Blog" class="content div">
+        <h3 style="text-align: center; margin-top: 10px; color:darkslategray">
+            Welcome to a place where you can find usefull and interesting blogs
+            about all sorts of toppics!</h3>
+        <br>
+        <h2 style="margin-bottom: 10px;">THAT GUY IN RIO DE JANEIRO WHO TOLD ME I CAN’T JOIN THE BOYS PLAY FOOTBALL</h2>
+        <div class="leftcolumn">
+            <div class="card">
+                <h4>Image that best describes the text</h4>
+                <img class="imgblog" src="Trisha.jpg" alt="image">
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h4 style="margin-left: 20px;">About the Author</h4>
+                <img style="height:100px; margin-left: 30px;" src="blogg.png" alt="image">
+                <p style="width:100%; height:180px; overflow:scroll; margin-right: 10px; ">HELLO! MY NAME IS TRISHA.<br> I didn’t quit my job to travel the world. I made a job out of traveling and you can do it, too!
+                         I’ve been traveling the world non-stop for 11 years now without going home. I’d like to 
+                        believe I am not traveling anymore – I just choose to be somewhere else all the time. </textarea></p>
+            </div>
+        </div>
+        <br>
+        <div class="middlecolumn">
+            <div class="card">
+                <br>
+                <p style="width:800px; height:200px; overflow:scroll; ">
+                    Editor’s Note: This happened in 2014 when the writer, 
+                    Trisha, was staying in Rio de Janeiro. This article does not imply that these events 
+                    are relevant to today’s position of women in Brazil. The writer has not visited Rio since 
+                    2015 but is responsible for the events, characters, and timeline of this story.
+                    Going to the World Cup 2014 has always been a goal for me. On June 12, 2014, I reached Rio de 
+                    Janeiro, just in time for the opening of the World Cup. Brazil, as the world knows, is a football 
+                    addicted nation. They even have the ball in their flag! Coming from a country who plays basketball 
+                    as a national sport (we got it from our American influence), I was very happy to be in an environment 
+                    where everyone breathes my favorite sport.
+                    During the World Cup, my friends and I had a routine. Every morning, if we are not 
+                    hung over from the previous night’s games, we hang out at the beach in Copacabana or Ipanema. 
+                    The beach was always full of Argentines, Germans, and Brazilians who came from all over the world
+                    to witness a great sporting event. Beaches in Rio are beautiful and is part of the carioca culture. 
+                    Even if it was full, we always found a place to lay our beach towels. It never stopped us from 
+                    going to the beach. I believe part of the Rio beaches culture is being full of people all the time, 
+                    and that it represents the city’s chill out vibe – I kept wondering if these people even go to work 
+                    as the beaches are loaded even on a Monday afternoon.
+                    For most of my teenage years, I played football. It was my means of getting into good schools in my country. 
+                    In the Philippines, sports scholarships are very common in schools so if you have are a sports monster as a kid 
+                    (especially our well-funded basketball), you will have the edge to go to school for free.
+                        
+                    But being part of the school’s football team made me wake up early to go to school. I remember my morning checklist 
+                    not being books, notebooks, or school projects, but shin guards, long socks, short socks, jersey, shorts, and spikes. 
+                    We may not be the official Philippine team but my team is the best in scholastic leagues. Futsal, the 5-aside indoor football 
+                    is what we are good at. We didn’t have a space for field football as the men’s team were always a priority in using it so we 
+                    did our best to train futsal in the basketball court, which we share with the women’s basketball team. As they are priority, too 
+                    (yep, Philippines is a basketball country), we have to wait for their training to finish from 7 pm – 9 pm.
+                </p>
+            </div>
+        </div>
+        <form>
             <p>
-                <label>Email:
-                   <input type = "email" placeholder = "username@domain.com" 
-                      required />
-                </label>
+                <label>How did you like this text?:
+                    <input type = "number" 
+                         min = "1"
+                        max = "10"
+                        step = "1"
+                        value = "5" />
+                </label> (Enter a number between 1 and 10)
             </p>
             <br>
-            <p>
-                <label>Date of birth:
-                   <input type = "date" required /> 
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Date you visited this site:
-                   <input type = "date" required /> 
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Phone number:
-                   <input type = "tel" placeholder = "(###) ###-####" 
-                      pattern = "\(\d{3}\) +\d{3}-\d{4}" />
-                </label>
-            </p>
-            <br>
-            <p>
-                Your favorite tab:<br>
-                <label>Home
-                   <input name = "thingsliked" type = "radio" 
-                      value = "Home"></label>
-                <label>Favorite things
-                   <input name = "thingsliked" type = "radio" 
-                      value = "Favorite"></label>
-                <label>Gallery
-                   <input name = "thingsliked" type = "radio" 
-                      value = "Gallery"></label> 
-                <label>Blog 
-                   <input name = "thingsliked" type = "radio" 
-                      value = "Blog"></label>
-            </p>
-            <br>
-            <p><label>Any comments and constructive criticisms are encouraged!:<br>
+            <p><label>If you have any personal experiences concerning the subject
+                of this text, feel free to write it here:<br>
                 <textarea name = "comments"
                    rows = "5" cols = "60" placeholder="Comment here"></textarea>
             </label></p>
-            <br>
-            <p>
-                <label>Rate your overall experience: 
-                   <select name = "rating">
-                      <option selected>Great</option>
-                      <option>9</option>
-                      <option>8</option>
-                      <option>7</option>
-                      <option>6</option>
-                      <option>5</option>
-                      <option>4</option>
-                      <option>3</option>
-                      <option>2</option>
-                      <option>Terrible</option>
-                   </select>
-                </label>
-            </p>
-            <br>
             <p>
                 <input type = "submit" value = "Submit">
                 <input type = "reset" value = "Clear">
             </p>
+            <br>
+            <p>Or send me your story via email:<a href="mailto:petrovskamartina20@yahoo.com">
+                petrovskamartina20@yahoo.com</a></p>
         </form>
+        <footer>
+            <h6 style="font-weight:600;">&copy;<strong>The previous text and images have been taken from a blog of the website</strong>
+                <a href="https://www.psimonmyway.com/">Ps.I'm on my way.</a>
+            </h6>
+        </footer>
+      </div>
 
-        <section id="Contact" class="content">
-            <h2 class='thickdashed text'>CONTACT</h2>
-            <address>
-                If you have any questions or suggestions you can contact me via email:<br>
-                <a href="mailto:petrovskamartina20@yahoo.com">petrovskamartina20@yahoo.com</a><br>
-                Or<br>
-                <a href="https://www.facebook.com/martina.petrovska.5/">Facebook</a><br>
-                <a href="https://www.instagram.com/martinaa.petrovska/">Instagram</a>
-            </address>
-        </section>
-   </body>
+      <form id="Survey" class="content div">
+        <p>It would mean a lot to me if you could spare a few minutes
+            to complete the following survey to let me know how your overall experience was
+            visiting this site!
+        </p>
+        <br>
+        <br>
+        <p><label>Name:
+            <input name = "name" type = "text" size = "20" maxlength = "15">
+        </label></p>
+        <br>
+        <p><label>Surname:
+            <input name = "surname" type = "text" size = "25"
+               maxlength = "15">
+        </label></p>
+        <br>
+        <p>
+            <label>Email:
+               <input type = "email" placeholder = "username@domain.com" 
+                  required />
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Date of birth:
+               <input type = "date" required /> 
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Date you visited this site:
+               <input type = "date" required /> 
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Phone number:
+               <input type = "tel" placeholder = "(###) ###-####" 
+                  pattern = "\(\d{3}\) +\d{3}-\d{4}" />
+            </label>
+        </p>
+        <br>
+        <p>
+            Your favorite tab:<br>
+            <label>Home
+               <input name = "thingsliked" type = "radio" 
+                  value = "Home"></label>
+            <label>Favorite things
+               <input name = "thingsliked" type = "radio" 
+                  value = "Favorite"></label>
+            <label>Gallery
+               <input name = "thingsliked" type = "radio" 
+                  value = "Gallery"></label> 
+            <label>Blog 
+               <input name = "thingsliked" type = "radio" 
+                  value = "Blog"></label>
+        </p>
+        <br>
+        <p><label>Any comments and constructive criticisms are encouraged!:<br>
+            <textarea name = "comments"
+               rows = "5" cols = "60" placeholder="Comment here"></textarea>
+        </label></p>
+        <br>
+        <p>
+            <label>Rate your overall experience: 
+               <select name = "rating">
+                  <option selected>Great</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>Terrible</option>
+               </select>
+            </label>
+        </p>
+        <br>
+        <p>
+            <input type = "submit" value = "Submit">
+            <input type = "reset" value = "Clear">
+        </p>
+      </form>
+
+      <div id="Contact" class="content div">
+        <address>
+            If you have any questions or suggestions you can contact me via email:<br>
+            <a href="mailto:petrovskamartina20@yahoo.com">petrovskamartina20@yahoo.com</a><br>
+            Or<br>
+            <a href="https://www.facebook.com/martina.petrovska.5/">Facebook</a><br>
+            <a href="https://www.instagram.com/martinaa.petrovska/">Instagram</a>
+        </address>
+      </div>
+      <script type="text/javascript">
+        var HH= document.getElementById("Home");
+        var FF = document.getElementById( "Favorite" );
+        var GG = document.getElementById( "Gallery" );
+        var BB = document.getElementById( "Blog" );
+        var SS = document.getElementById( "Survey" );
+        var CC = document.getElementById( "Contact" );
+        var MU = document.getElementById( "Music" );
+        var MO = document.getElementById( "Movies" );
+        var FO = document.getElementById( "Food" );
+        function buttonPressed1() {HH.style.display="block";
+                                   GG.style.display="none";
+                                   BB.style.display="none";
+                                   SS.style.display="none";
+                                   CC.style.display="none";
+                                   MU.style.display="none";
+                                   MO.style.display="none";
+                                   FO.style.display="none";}
+        function buttonPressed2() {HH.style.display="none";
+                                   GG.style.display="none";
+                                   BB.style.display="none";
+                                   SS.style.display="none";
+                                   CC.style.display="none";
+                                   MU.style.display="block";
+                                   MO.style.display="none";
+                                   FO.style.display="none";}
+        function buttonPressed3() {HH.style.display="none";
+                                   GG.style.display="none";
+                                   BB.style.display="none";
+                                   SS.style.display="none";
+                                   CC.style.display="none";
+                                   MU.style.display="none";
+                                   MO.style.display="block";
+                                   FO.style.display="none";}
+        function buttonPressed4() {HH.style.display="none";
+                                   GG.style.display="none";
+                                   BB.style.display="none";
+                                   SS.style.display="none";
+                                   CC.style.display="none";
+                                   MU.style.display="none";
+                                   MO.style.display="none";
+                                   FO.style.display="block";}
+        function buttonPressed6() {HH.style.display="none";
+                                   GG.style.display="block";
+                                   BB.style.display="none";
+                                   SS.style.display="none";
+                                   CC.style.display="none";}
+        function buttonPressed7() {HH.style.display="none";
+                                   GG.style.display="none";
+                                   BB.style.display="block";
+                                   SS.style.display="none";
+                                   CC.style.display="none";}
+        function buttonPressed8() {HH.style.display="none";
+                                   GG.style.display="none";
+                                   BB.style.display="none";
+                                   SS.style.display="block";
+                                   CC.style.display="none";}
+        function buttonPressed9() {HH.style.display="none";
+                                   GG.style.display="none";
+                                   BB.style.display="none";
+                                   SS.style.display="none";
+                                   CC.style.display="block";}
+        
+        function content1()
+              {
+                var Button = document.getElementById( "H" );
+                Button.addEventListener( "click", buttonPressed1, false );
+              }
+        function content2()
+              {
+                var Button = document.getElementById( "M" );
+                Button.addEventListener( "click", buttonPressed2, false );
+              }
+        function content3()
+              {
+                var Button = document.getElementById( "MO" );
+                Button.addEventListener( "click", buttonPressed3, false );
+              }
+        function content4()
+              {
+                var Button = document.getElementById( "F" );
+                Button.addEventListener( "click", buttonPressed4, false );
+              }
+        function content6()
+              {
+                var Button = document.getElementById( "G" );
+                Button.addEventListener( "click", buttonPressed6, false );
+              }
+        function content7()
+              {
+                var Button = document.getElementById( "B" );
+                Button.addEventListener( "click", buttonPressed7, false );
+              } 
+        function content8()
+              {
+                var Button = document.getElementById( "S" );
+                Button.addEventListener( "click", buttonPressed8, false );
+              }   
+        function content9()
+              {
+                var Button = document.getElementById( "C" );
+                Button.addEventListener( "click", buttonPressed9, false );
+              }     
+      </script>
+    </body>
 </html>
