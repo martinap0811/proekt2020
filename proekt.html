@@ -112,6 +112,12 @@
                         color:#ecdc63; 
                         transition: all 0.5s ease 0s;
                       }
+        .gal {display:inline;}
+        .frame { border-color: rgb(202, 153, 252) rgb(166, 252, 144);
+                 border-image:none;
+                 border-radius: 50px 0 50px 0;
+                 border-style: solid;
+                 border-width:20px;}
         .h1, .h2 {text-align: center;
                  color:darkslategrey;
                  font-family: cursive, sans-serif;}
@@ -135,12 +141,25 @@
                    font-weight:400;
                    }
         .content  {
+                     margin-top: 50px;
                      margin-bottom:60px;
                      width:750px;
                      text-align:justify;
                      font-size:14px;
                      line-height:20px;
-                  }           
+                   } 
+        .contentgal  {
+                     margin-top: 50px;
+                     margin-bottom:60px;
+                     width:80%;
+                     text-align:justify;
+                     font-size:14px;
+                     line-height:20px;
+                   }    
+        .btn    { 
+                 vertical-align:250px;
+                 
+                 }                 
         div, form, p {
                        width:100%; 
                        max-width:1200px; 
@@ -201,7 +220,7 @@
                        <button class="hell" type="button" id="F" onclick="content4()">FOOD</button>
                      </span>
                     </span>
-                    <button class="hell" type="button" id="G" onclick="content6()" >GALLERY</button>
+                    <button class="hell" type="button" id="G" onclick="content6()">GALLERY</button>
                     <button class="hell" type="button" id="B" onclick="content7()">BLOG</button>
                     <button class="hell" type="button" id="S" onclick="content8()">SURVEY</button>
                     <button class="hell" type="button" id="C" onclick="content9()">CONTACT INFO</button>
@@ -377,27 +396,20 @@
               </div>
       </div>
 
-      <div class="content div" id="Gallery" >
-            <img src="slika1.jpg" width="240" height="300" alt="slika1">
-            <img src="slika2.png" width="240" height="300" alt="slika2">
-            <img src="slika4.png" width="240" height="300" alt="slika3">
-            <p><label>
-                <textarea name = "comments"
-                   rows = "3" cols = "31" placeholder="Comment here"></textarea>
-            </label>
-            <label>
-                <textarea name = "comments"
-                   rows = "3" cols = "31" placeholder="Comment here"></textarea>
-            </label>  
-            <label>
-                <textarea name = "comments"
-                   rows = "3" cols = "31" placeholder="Comment here"></textarea>
-            </label></p>
-            <form>
-                <input type = "submit" value = "Like!">
-                <input class="distance" type = "submit" value = "Like!">
-                <input class="distance" type = "submit" value = "Like!">
-            </form>
+      <div class="contentgal div" id="Gallery" >
+        <div class="gal"></div>
+            <button type="button" class="btn" onclick=IMB()>BACK</button>
+            <img class="frame" src="slika2.png" alt="slika2" id='image' height="500px" width="400px">
+            <button type="button" class="btn" onclick=IMF()>NEXT</button>
+            <div class="gal">
+                <button type="button" id="heart" style="color:black;" onclick=Like()>&hearts;</button>
+                <p class="gal" id="in" ></p>
+            </div>
+        </div>
+        <div>
+            <img class="div" id="output_image" height=400px width=400px>
+            <input type="file" onchange="preview_image(event)">
+        </div>
       </div>
       <div id="Blog" class="content div">
         <h3 style="text-align: center; margin-top: 10px; color:darkslategray">
@@ -582,6 +594,17 @@
         </address>
       </div>
       <script type="text/javascript">
+        var images =["slika2.png", "slika4.png", "slika1.jpg"];
+        var imlen = images.length;
+        var i=0;
+        var likeim0=document.getElementById("heart");
+        var likeim1=document.getElementById("heart");
+        var likeim2=document.getElementById("heart");
+        var countim0d=5;
+        var countim0=localStorage.getItem("countKey");
+        localStorage.setItem("countKey0",countim0);
+        var countim1=0;
+        var countim2=0;
         var HH= document.getElementById("Home");
         var FF = document.getElementById( "Favorite" );
         var GG = document.getElementById( "Gallery" );
@@ -683,7 +706,58 @@
               {
                 var Button = document.getElementById( "C" );
                 Button.addEventListener( "click", buttonPressed9, false );
-              }     
+              }   
+        function preview_image(event) {
+                        var reader = new FileReader();
+                        reader.onload = function(){
+                        var output = document.getElementById('output_image');
+                        output.src = reader.result;
+                        var im = document.getElementById("output_image");
+                        im.style.display="block";
+                        }
+                        reader.readAsDataURL(event.target.files[0]);
+                    }  
+        function IMF() {
+            i=i+1;
+            if(i==imlen) {
+                i=0;
+            }
+            document.getElementById('image').src=images[i];
+            }
+        function IMB(){
+            i=i-1;
+            if(i<0) {
+            i=imlen-1;
+            }
+            document.getElementById('image').src=images[i];
+            var like = document.getElementById('heart');
+            like.addEventListener("click",Like,false);
+            }
+            
+        function Like() {
+                var countim0s=localStorage.getItem("countKey0");
+                countim0=parseInt(countim0s);
+                if(likeim0.style.color!="red"){
+                    likeim0.style.color="red";
+                    countim0++;
+                    }
+                    else {
+                        likeim0.style.color="black";
+                        countim0--;
+                        }    
+                document.getElementById("in").innerHTML=countim0;
+                localStorage.setItem("countKey",countim0);
+            }   
+        function Likedefault() {
+                likeim0.style.color="black";
+                document.getElementById("in").innerHTML=countim0;
+                }
+        window.addEventListener( "load", Likedefault, false );
+        function Likedefault1() {
+                likeim0.style.color="black";
+                countim0=countim0d;
+                document.getElementById("in").innerHTML=countim0;
+            }
       </script>
     </body>
 </html>
