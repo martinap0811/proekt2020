@@ -506,8 +506,8 @@
             </p>
             <br>
             <br>
-            <p><label  >Name:
-                <input name = "name" type = "text" size = "20" maxlength = "15" id="names" required/>
+            <p><label>Name:
+                <input name = "name" type = "text" size = "20" maxlength = "15">
             </label></p>
             <br>
             <p><label>Surname:
@@ -580,14 +580,11 @@
             </p>
             <br>
             <p>
-                <form action="#">
-                    <input id="Submit" type = "button" value = "Submit">
-                    <input type = "reset" value = "Clear">
-                </form>
+                <input type = "submit" value = "Submit">
+                <input type = "reset" value = "Clear">
             </p>
         </form>
       </div>
-      <div class="div" id="thanks"></div>
 
       <div id="Contact" class="content div">
         <address>
@@ -736,26 +733,6 @@
                 document.getElementById("in").innerHTML=countim0d;
             }
         window.addEventListener("loadstart",Likedefault1,true);
-        function surveysays() {
-            var th=document.getElementById("thanks")
-            th.style.display="block";
-            SS.style.display="none";
-            HH.style.display="none";
-            GG.style.display="none";
-            BB.style.display="none";
-            CC.style.display="none";
-            MU.style.display="none";
-            MO.style.display="none";
-            FO.style.display="none";
-            var name=document.getElementById("names");
-            document.getElementById("thanks").innerHTML="Thank you for your submission"+ " "+ name.value +" "+"!";
-        }
-        function startsubmit()
-         {
-            var button = document.getElementById( "Submit" );
-            button.addEventListener( "click",surveysays, false );
-         } 
-        window.addEventListener("load",startsubmit,false);
       </script>
     </body>
 </html>

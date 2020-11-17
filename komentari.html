@@ -107,8 +107,7 @@
                  padding: 14px 16px;
                  text-decoration: none;
                  }
-        .hell:hover {color:azure;}
-        input:hover {color:rgb(90, 5, 146)}
+        input:hover,.hell:hover {color:azure;}
         .dropdown:hover{  background-color:#68aef5;
                         color:#ecdc63; 
                         transition: all 0.5s ease 0s;
@@ -402,9 +401,13 @@
             <button type="button" class="btn" onclick=IMB()>BACK</button>
             <img class="frame" src="slika2.png" alt="slika2" id='image' height="500px" width="400px">
             <button type="button" class="btn" onclick=IMF()>NEXT</button>
-            <div class="gal">
+            <div class="gal" >
                 <button type="button" id="heart" style="color:black;" onclick=Like()>&hearts;</button>
                 <p class="gal" id="in" ></p>
+            </div>
+            <div class="gal" action="#" id="GFG_DOWN">
+                <button onClick="GFG_Fun()">COMMENT</button>
+                
             </div>
         </div>
         <div>
@@ -498,96 +501,92 @@
             </h6>
         </footer>
       </div>
-      <div id="Survey" class="content div">
-        <form >
-            <p>It would mean a lot to me if you could spare a few minutes
-                to complete the following survey to let me know how your overall experience was
-                visiting this site!
-            </p>
-            <br>
-            <br>
-            <p><label  >Name:
-                <input name = "name" type = "text" size = "20" maxlength = "15" id="names" required/>
-            </label></p>
-            <br>
-            <p><label>Surname:
-                <input name = "surname" type = "text" size = "25"
-                maxlength = "15">
-            </label></p>
-            <br>
-            <p>
-                <label>Email:
-                <input type = "email" placeholder = "username@domain.com" 
-                    required />
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Date of birth:
-                <input type = "date" required /> 
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Date you visited this site:
-                <input type = "date" required /> 
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Phone number:
-                <input type = "tel" placeholder = "(###) ###-####" 
-                    pattern = "\(\d{3}\) +\d{3}-\d{4}" />
-                </label>
-            </p>
-            <br>
-            <p>
-                Your favorite content:<br>
-                <label>Home
-                <input name = "thingsliked" type = "radio" 
-                    value = "Home"></label>
-                <label>Favorite things
-                <input name = "thingsliked" type = "radio" 
-                    value = "Favorite"></label>
-                <label>Gallery
-                <input name = "thingsliked" type = "radio" 
-                    value = "Gallery"></label> 
-                <label>Blog 
-                <input name = "thingsliked" type = "radio" 
-                    value = "Blog"></label>
-            </p>
-            <br>
-            <p><label>Any comments and constructive criticisms are encouraged!:<br>
-                <textarea name = "comments"
-                rows = "5" cols = "60" placeholder="Comment here"></textarea>
-            </label></p>
-            <br>
-            <p>
-                <label>Rate your overall experience: 
-                <select name = "rating">
-                    <option selected>Great</option>
-                    <option>9</option>
-                    <option>8</option>
-                    <option>7</option>
-                    <option>6</option>
-                    <option>5</option>
-                    <option>4</option>
-                    <option>3</option>
-                    <option>2</option>
-                    <option>Terrible</option>
-                </select>
-                </label>
-            </p>
-            <br>
-            <p>
-                <form action="#">
-                    <input id="Submit" type = "button" value = "Submit">
-                    <input type = "reset" value = "Clear">
-                </form>
-            </p>
-        </form>
-      </div>
-      <div class="div" id="thanks"></div>
+
+      <form id="Survey" class="content div">
+        <p>It would mean a lot to me if you could spare a few minutes
+            to complete the following survey to let me know how your overall experience was
+            visiting this site!
+        </p>
+        <br>
+        <br>
+        <p><label>Name:
+            <input name = "name" type = "text" size = "20" maxlength = "15">
+        </label></p>
+        <br>
+        <p><label>Surname:
+            <input name = "surname" type = "text" size = "25"
+               maxlength = "15">
+        </label></p>
+        <br>
+        <p>
+            <label>Email:
+               <input type = "email" placeholder = "username@domain.com" 
+                  required />
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Date of birth:
+               <input type = "date" required /> 
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Date you visited this site:
+               <input type = "date" required /> 
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Phone number:
+               <input type = "tel" placeholder = "(###) ###-####" 
+                  pattern = "\(\d{3}\) +\d{3}-\d{4}" />
+            </label>
+        </p>
+        <br>
+        <p>
+            Your favorite content:<br>
+            <label>Home
+               <input name = "thingsliked" type = "radio" 
+                  value = "Home"></label>
+            <label>Favorite things
+               <input name = "thingsliked" type = "radio" 
+                  value = "Favorite"></label>
+            <label>Gallery
+               <input name = "thingsliked" type = "radio" 
+                  value = "Gallery"></label> 
+            <label>Blog 
+               <input name = "thingsliked" type = "radio" 
+                  value = "Blog"></label>
+        </p>
+        <br>
+        <p><label>Any comments and constructive criticisms are encouraged!:<br>
+            <textarea name = "comments"
+               rows = "5" cols = "60" placeholder="Comment here"></textarea>
+        </label></p>
+        <br>
+        <p>
+            <label>Rate your overall experience: 
+               <select name = "rating">
+                  <option selected>Great</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>Terrible</option>
+               </select>
+            </label>
+        </p>
+        <br>
+        <p>
+            <input type = "submit" value = "Submit">
+            <input type = "reset" value = "Clear">
+        </p>
+      </form>
 
       <div id="Contact" class="content div">
         <address>
@@ -736,26 +735,42 @@
                 document.getElementById("in").innerHTML=countim0d;
             }
         window.addEventListener("loadstart",Likedefault1,true);
-        function surveysays() {
-            var th=document.getElementById("thanks")
-            th.style.display="block";
-            SS.style.display="none";
-            HH.style.display="none";
-            GG.style.display="none";
-            BB.style.display="none";
-            CC.style.display="none";
-            MU.style.display="none";
-            MO.style.display="none";
-            FO.style.display="none";
-            var name=document.getElementById("names");
-            document.getElementById("thanks").innerHTML="Thank you for your submission"+ " "+ name.value +" "+"!";
-        }
-        function startsubmit()
-         {
-            var button = document.getElementById( "Submit" );
-            button.addEventListener( "click",surveysays, false );
-         } 
-        window.addEventListener("load",startsubmit,false);
+
+        var down = document.getElementById("GFG_DOWN"); 
+            
+                // Create a break line element 
+        var br = document.createElement("br");  
+        function GFG_Fun() { 
+                            
+                // Create a form synamically 
+        var form = document.createElement("form"); 
+        form.setAttribute("method", "post"); 
+        form.setAttribute("action", "#"); 
+            
+                // Create an input element for Full Name 
+        var FN = document.createElement("input"); 
+        FN.setAttribute("type", "text"); 
+        FN.setAttribute("name", "FullName"); 
+        FN.setAttribute("placeholder", "Full Name"); 
+            
+  
+                // create a submit button 
+        var s = document.createElement("input"); 
+        s.setAttribute("type", "submit"); 
+        s.setAttribute("value", "Submit"); 
+                  
+                // Append the full name input to the form 
+        form.appendChild(FN);  
+                  
+                // Inserting a line break 
+        form.appendChild(br.cloneNode()); 
+                  
+                // Append the submit button to the form 
+        form.appendChild(s);  
+  
+        document.getElementsByTagName("body")[0] 
+        .appendChild(form); 
+            } 
       </script>
     </body>
 </html>

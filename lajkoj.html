@@ -107,8 +107,7 @@
                  padding: 14px 16px;
                  text-decoration: none;
                  }
-        .hell:hover {color:azure;}
-        input:hover {color:rgb(90, 5, 146)}
+        input:hover,.hell:hover {color:azure;}
         .dropdown:hover{  background-color:#68aef5;
                         color:#ecdc63; 
                         transition: all 0.5s ease 0s;
@@ -403,7 +402,9 @@
             <img class="frame" src="slika2.png" alt="slika2" id='image' height="500px" width="400px">
             <button type="button" class="btn" onclick=IMF()>NEXT</button>
             <div class="gal">
-                <button type="button" id="heart" style="color:black;" onclick=Like()>&hearts;</button>
+                <button type="button" id="heart0" style="color:black;" onclick="Like()">&hearts;</button>
+                <button class="div gal" type="button" id="heart1" style="color:black;" onclick="Like()">&hearts;</button>
+                <button class="div gal" type="button" id="heart2" style="color:black;" onclick="Like()">&hearts;</button>
                 <p class="gal" id="in" ></p>
             </div>
         </div>
@@ -498,96 +499,92 @@
             </h6>
         </footer>
       </div>
-      <div id="Survey" class="content div">
-        <form >
-            <p>It would mean a lot to me if you could spare a few minutes
-                to complete the following survey to let me know how your overall experience was
-                visiting this site!
-            </p>
-            <br>
-            <br>
-            <p><label  >Name:
-                <input name = "name" type = "text" size = "20" maxlength = "15" id="names" required/>
-            </label></p>
-            <br>
-            <p><label>Surname:
-                <input name = "surname" type = "text" size = "25"
-                maxlength = "15">
-            </label></p>
-            <br>
-            <p>
-                <label>Email:
-                <input type = "email" placeholder = "username@domain.com" 
-                    required />
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Date of birth:
-                <input type = "date" required /> 
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Date you visited this site:
-                <input type = "date" required /> 
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Phone number:
-                <input type = "tel" placeholder = "(###) ###-####" 
-                    pattern = "\(\d{3}\) +\d{3}-\d{4}" />
-                </label>
-            </p>
-            <br>
-            <p>
-                Your favorite content:<br>
-                <label>Home
-                <input name = "thingsliked" type = "radio" 
-                    value = "Home"></label>
-                <label>Favorite things
-                <input name = "thingsliked" type = "radio" 
-                    value = "Favorite"></label>
-                <label>Gallery
-                <input name = "thingsliked" type = "radio" 
-                    value = "Gallery"></label> 
-                <label>Blog 
-                <input name = "thingsliked" type = "radio" 
-                    value = "Blog"></label>
-            </p>
-            <br>
-            <p><label>Any comments and constructive criticisms are encouraged!:<br>
-                <textarea name = "comments"
-                rows = "5" cols = "60" placeholder="Comment here"></textarea>
-            </label></p>
-            <br>
-            <p>
-                <label>Rate your overall experience: 
-                <select name = "rating">
-                    <option selected>Great</option>
-                    <option>9</option>
-                    <option>8</option>
-                    <option>7</option>
-                    <option>6</option>
-                    <option>5</option>
-                    <option>4</option>
-                    <option>3</option>
-                    <option>2</option>
-                    <option>Terrible</option>
-                </select>
-                </label>
-            </p>
-            <br>
-            <p>
-                <form action="#">
-                    <input id="Submit" type = "button" value = "Submit">
-                    <input type = "reset" value = "Clear">
-                </form>
-            </p>
-        </form>
-      </div>
-      <div class="div" id="thanks"></div>
+
+      <form id="Survey" class="content div">
+        <p>It would mean a lot to me if you could spare a few minutes
+            to complete the following survey to let me know how your overall experience was
+            visiting this site!
+        </p>
+        <br>
+        <br>
+        <p><label>Name:
+            <input name = "name" type = "text" size = "20" maxlength = "15">
+        </label></p>
+        <br>
+        <p><label>Surname:
+            <input name = "surname" type = "text" size = "25"
+               maxlength = "15">
+        </label></p>
+        <br>
+        <p>
+            <label>Email:
+               <input type = "email" placeholder = "username@domain.com" 
+                  required />
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Date of birth:
+               <input type = "date" required /> 
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Date you visited this site:
+               <input type = "date" required /> 
+            </label>
+        </p>
+        <br>
+        <p>
+            <label>Phone number:
+               <input type = "tel" placeholder = "(###) ###-####" 
+                  pattern = "\(\d{3}\) +\d{3}-\d{4}" />
+            </label>
+        </p>
+        <br>
+        <p>
+            Your favorite tab:<br>
+            <label>Home
+               <input name = "thingsliked" type = "radio" 
+                  value = "Home"></label>
+            <label>Favorite things
+               <input name = "thingsliked" type = "radio" 
+                  value = "Favorite"></label>
+            <label>Gallery
+               <input name = "thingsliked" type = "radio" 
+                  value = "Gallery"></label> 
+            <label>Blog 
+               <input name = "thingsliked" type = "radio" 
+                  value = "Blog"></label>
+        </p>
+        <br>
+        <p><label>Any comments and constructive criticisms are encouraged!:<br>
+            <textarea name = "comments"
+               rows = "5" cols = "60" placeholder="Comment here"></textarea>
+        </label></p>
+        <br>
+        <p>
+            <label>Rate your overall experience: 
+               <select name = "rating">
+                  <option selected>Great</option>
+                  <option>9</option>
+                  <option>8</option>
+                  <option>7</option>
+                  <option>6</option>
+                  <option>5</option>
+                  <option>4</option>
+                  <option>3</option>
+                  <option>2</option>
+                  <option>Terrible</option>
+               </select>
+            </label>
+        </p>
+        <br>
+        <p>
+            <input type = "submit" value = "Submit">
+            <input type = "reset" value = "Clear">
+        </p>
+      </form>
 
       <div id="Contact" class="content div">
         <address>
@@ -602,14 +599,16 @@
         var images =["slika2.png", "slika4.png", "slika1.jpg"];
         var imlen = images.length;
         var i=0;
-        var likeim0=document.getElementById("heart");
-        var likeim1=document.getElementById("heart");
-        var likeim2=document.getElementById("heart");
+        var likeim0=document.getElementById("heart0");
+        var likeim1=document.getElementById("heart1");
+        var likeim2=document.getElementById("heart2");
         var countim0d=5;
-        var countim0=localStorage.getItem("countKey");
+        var countim0=localStorage.getItem("countKey00");
         localStorage.setItem("countKey0",countim0);
-        var countim1=0;
-        var countim2=0;
+        var countim1=localStorage.getItem("countKey11");
+        localStorage.setItem("countKey1",countim1);
+        var countim2=localStorage.getItem("countKey22");
+        localStorage.setItem("countKey2",countim2);
         var HH= document.getElementById("Home");
         var FF = document.getElementById( "Favorite" );
         var GG = document.getElementById( "Gallery" );
@@ -700,6 +699,8 @@
                 i=0;
             }
             document.getElementById('image').src=images[i];
+            var like=document.getElementById("heart1");
+            like.addEventListener("click",Like(i),false);
             }
         function IMB(){
             i=i-1;
@@ -707,11 +708,12 @@
             i=imlen-1;
             }
             document.getElementById('image').src=images[i];
-            var like = document.getElementById('heart');
-            like.addEventListener("click",Like,false);
+            var like= document.getElementById("heart"+"i");
+            like.addEventListener("click",Like(i),false);
             }
             
-        function Like() {
+        function Like(){
+            if (i==0) {
                 var countim0s=localStorage.getItem("countKey0");
                 countim0=parseInt(countim0s);
                 if(likeim0.style.color!="red"){
@@ -723,7 +725,38 @@
                         }    
                 document.getElementById("in").innerHTML=countim0;
                 localStorage.setItem("countKey",countim0);
-            }   
+            } else if (i==1) {
+                likeim1.style.display="block";
+                likeim0.style.display="none";
+                likeim2.style.display="none";
+                var countim1s=localStorage.getItem("countKey11");
+                countim1=parseInt(countim1s);
+                if(likeim1.style.color!="red"){
+                    likeim1.style.color="red";
+                    countim0++;
+                    }
+                    else{
+                        likeim1.style.color="black";
+                        }    
+                document.getElementById("in").innerHTML=countim1;
+                localStorage.setItem("countKey1",countim1);
+            } else {
+                likeim1.style.display="none";
+                likeim0.style.display="none";
+                likeim2.style.display="block";
+                var countim2s=localStorage.getItem("countKey22");
+                countim2=parseInt(countim2s);
+                if(likeim2.style.color!="red"){
+                    likeim2.style.color="red";
+                    countim2++;
+                    }
+                    else{
+                        likeim2.style.color="black";
+                        }    
+                document.getElementById("in").innerHTML=countim2;
+                localStorage.setItem("countKey2",countim2);
+            }
+            }        
         function Likedefault() {
                 likeim0.style.color="black";
                 document.getElementById("in").innerHTML=countim0;
@@ -732,30 +765,10 @@
         function Likedefault1() {
                 likeim0.style.color="black";
                 countim0=countim0d;
-                localStorage.setItem("countKey0",countim0);
-                document.getElementById("in").innerHTML=countim0d;
+                countim1=countim0d;
+                countim2=countim0d;
+                document.getElementById("in").innerHTML=countim0;
             }
-        window.addEventListener("loadstart",Likedefault1,true);
-        function surveysays() {
-            var th=document.getElementById("thanks")
-            th.style.display="block";
-            SS.style.display="none";
-            HH.style.display="none";
-            GG.style.display="none";
-            BB.style.display="none";
-            CC.style.display="none";
-            MU.style.display="none";
-            MO.style.display="none";
-            FO.style.display="none";
-            var name=document.getElementById("names");
-            document.getElementById("thanks").innerHTML="Thank you for your submission"+ " "+ name.value +" "+"!";
-        }
-        function startsubmit()
-         {
-            var button = document.getElementById( "Submit" );
-            button.addEventListener( "click",surveysays, false );
-         } 
-        window.addEventListener("load",startsubmit,false);
       </script>
     </body>
 </html>
