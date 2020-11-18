@@ -114,6 +114,12 @@
                         transition: all 0.5s ease 0s;
                       }
         .gal {display:inline;}
+        .galg { position: absolute;
+                display: inline;
+                top:500px;
+                right:100px;
+                bottom:100px;
+                left:800px;}
         .frame { border-color: rgb(202, 153, 252) rgb(166, 252, 144);
                  border-image:none;
                  border-radius: 50px 0 50px 0;
@@ -406,6 +412,17 @@
                 <button type="button" id="heart" style="color:black;" onclick=Like()>&hearts;</button>
                 <p class="gal" id="in" ></p>
             </div>
+            <div >
+                <form class="galg">
+                    <textarea name = "comments" rows = "3" cols = "30" id="com" placeholder="Comment here"></textarea> 
+                    <button type="button" id="comm" onclick=Coment() >Comment!</button>
+                    <ul id="rez0"></ul>
+                    <ul id="rez1"></ul>
+                    <ul id="rez2"></ul>
+                    <ul id="rez3"></ul>
+                    <ul id="rez4"></ul>
+                </form>
+            </div>
         </div>
         <div>
             <img class="div" id="output_image" height=400px width=400px>
@@ -610,6 +627,9 @@
         localStorage.setItem("countKey0",countim0);
         var countim1=0;
         var countim2=0;
+        var comments=new Array();
+        let m=0;
+        var countcl=0;
         var HH= document.getElementById("Home");
         var FF = document.getElementById( "Favorite" );
         var GG = document.getElementById( "Gallery" );
@@ -756,6 +776,15 @@
             button.addEventListener( "click",surveysays, false );
          } 
         window.addEventListener("load",startsubmit,false);
+        function Coment() {
+                if (m<5) {
+                    comments[m]=document.getElementById("com");
+                    document.getElementById("rez"+m).innerHTML=comments[m].value + "<br/>";
+                    com.value=com.placeholder;  
+                }
+                m++;
+            } 
+
       </script>
     </body>
 </html>
