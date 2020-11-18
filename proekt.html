@@ -185,6 +185,7 @@
                       }
         .middlecolumn {width:50%;
                         float:inline-start;
+                        margin-right:500px;
                         }
         .card      {
                     padding: 20px;
@@ -424,10 +425,6 @@
                 </form>
             </div>
         </div>
-        <div>
-            <img class="div" id="output_image" height=400px width=400px>
-            <input type="file" onchange="preview_image(event)">
-        </div>
       </div>
       <div id="Blog" class="content div">
         <h3 style="text-align: center; margin-top: 10px; color:darkslategray">
@@ -497,14 +494,27 @@
             </p>
             <br>
             <p><label>If you have any personal experiences concerning the subject
-                of this text, feel free to write it here:<br>
+                of this text, feel free to write your experience here and it will be posted automatically!<br><br>
+                Write the title of your post:<br>
+                <input type="text" size="30" id="blogname" ><br>
+                Write your post:<br>
                 <textarea name = "comments"
-                   rows = "5" cols = "60" placeholder="Comment here"></textarea>
+                   rows = "20" cols = "115" id="blogpost" placeholder="Post" ></textarea>
+                <br>
+                Write your name:
+                <input type="text" size="20" id="blogwriter"><br>
             </label></p>
             <p>
-                <input type = "submit" value = "Submit">
+                <input type = "button" value = "Submit" onclick="BlogP()">
                 <input type = "reset" value = "Clear">
             </p>
+            <br><br><br>
+            <div class="h2" style="margin-bottom: 10px;" id="blognamehere"></div>
+            <br>
+            <div class="card middlecolumn div" style="width:800px; height:200px; overflow:scroll; background-color:rgb(194, 227, 248); " id="blogposthere"></div>
+            <br>
+            <div style="margin-left: 700px;" id="blogwriterhere"></div>
+            <div style="margin-left: 700px;" id="blogtime"></div>
             <br>
             <p>Or send me your story via email:<a href="mailto:petrovskamartina20@yahoo.com">
                 petrovskamartina20@yahoo.com</a></p>
@@ -784,7 +794,24 @@
                 }
                 m++;
             } 
-
+        function BlogP() {
+            var n=document.getElementById("blogname");
+            var p=document.getElementById("blogpost");
+            var bn=document.getElementById("blogwriter");
+            blogposthere.style.display="block";
+            var d=new Date();
+            var dn=d.getHours();
+            var dp=d.getMinutes();
+            var ds=d.getSeconds();
+            var dd=d.getDate();
+            var dm=d.getMonth();
+            var dy=d.getFullYear();
+            document.getElementById("blognamehere").innerHTML=n.value;
+            document.getElementById("blogposthere").innerHTML=p.value;
+            document.getElementById("blogwriterhere").innerHTML="by"+" "+bn.value;
+            document.getElementById("blogtime").innerHTML=dn+":"+dp+":"+ds+" "+dd+"."+dm+ "."+dy
+            p.value=p.placeholder;
+        }
       </script>
     </body>
 </html>
