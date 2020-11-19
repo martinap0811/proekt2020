@@ -276,9 +276,10 @@
           </div>
         </div>
 
-      <div id="Favorite" class="content div">
+        <div id="Favorite" >
             <div>
-                <details id="Music">
+              <div class="content div" id="Music">
+                <details >
                     <summary ><strong>MUSIC &#127928;</strong></summary>
                     <p>Mostly I listen to all kinds of music, depending on my day, but my absolute
                         all time favorite genres are rock and metal.
@@ -332,7 +333,9 @@
                           </details>
                     </p>
                 </details>
-                <details id="Movies">
+              </div>
+              <div id="Movies" class="content div">
+                <details >
                     <summary>MOVIES &#127910;</summary>
                         <details>
                             <summary style="text-indent: 1em;"><mark>BIG</mark>Horror Fan</summary>
@@ -368,7 +371,9 @@
                                 </figure>
                         </details>
                 </details>
-                <details id="Food">
+              </div>
+              <div id="Food" class="content div">
+                <details >
                     <summary>FOOD &#127858;</summary>
                         <details>
                             <summary style="text-indent: 1em;">VEGGIE WRAP</summary>
@@ -402,7 +407,8 @@
                         </details>
                 </details>
               </div>
-      </div>
+            </div>
+        </div>
 
       <div class="contentgal div" id="Gallery" >
         <div class="gal"></div>
@@ -730,15 +736,15 @@
                 i=0;
             }
             document.getElementById('image').src=images[i];
+            var likef = document.getElementById('heart');
+            likef.addEventListener("click",Like,false);
             }
         function IMB(){
             i=i-1;
             if(i<0) {
             i=imlen-1;
             }
-            document.getElementById('image').src=images[i];
-            var like = document.getElementById('heart');
-            like.addEventListener("click",Like,false);
+            document.getElementById('image').src=images[i];  
             }
             
         function Like() {
@@ -805,11 +811,25 @@
             var ds=d.getSeconds();
             var dd=d.getDate();
             var dm=d.getMonth();
+            var m=new Array();
+            m[0]="January";
+            m[1]="February";
+            m[2]="March";
+            m[3]="April";
+            m[4]="May";
+            m[5]="June";
+            m[6]="July";
+            m[7]="August";
+            m[8]="September";
+            m[9]="October";
+            m[10]="November";
+            m[11]="December";
+            var dmm=m[dm];
             var dy=d.getFullYear();
             document.getElementById("blognamehere").innerHTML=n.value;
             document.getElementById("blogposthere").innerHTML=p.value;
             document.getElementById("blogwriterhere").innerHTML="by"+" "+bn.value;
-            document.getElementById("blogtime").innerHTML=dn+":"+dp+":"+ds+" "+dd+"."+dm+ "."+dy
+            document.getElementById("blogtime").innerHTML=dn+":"+dp+":"+ds+" "+dd+" "+dmm+ " "+dy
             p.value=p.placeholder;
         }
       </script>
