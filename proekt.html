@@ -4,6 +4,7 @@
    <head>
       <meta charset = "utf-8">
       <title>Personal Web Page!</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <style type= "text/css">
         body {background-color: rgb(185, 178, 231);}
         .dropdown {
@@ -27,7 +28,7 @@
                             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                             }
 
-        .dropdown-content .hell {
+        .dropdown-content .fav {
             float:none;
             color: rgb(66, 19, 19);
             padding: 12px 16px;
@@ -36,7 +37,7 @@
             text-align: left;
             }
 
-        .dropdown-content .hell:hover {
+        .dropdown-content .fav:hover {
             background-color: rgb(110, 66, 66);
             color: black;
             }
@@ -46,7 +47,7 @@
             background-color:#68aef5;
             }
   
-        nav button, div nav {  background-color: rgb(131, 80, 80);
+        nav a, div nav {  background-color: rgb(131, 80, 80);
                text-decoration:none;
                font-size:18px; 
                padding: 5px 10px; 
@@ -59,7 +60,7 @@
                text-align:center;
             }
         .starth {background-color:#68aef5}
-        .hell  {-webkit-appearance:none;
+        .fav  {-webkit-appearance:none;
                 background:none;
                 border:0;
                 -webkit-box-shadow:none;
@@ -73,9 +74,9 @@
                 text-align:inherit;
                 text-decoration: none;
                 }
-        .hell:active,
-        .hell:hover,
-        .hell:focus {color: inherit;
+        .fav:active,
+        .fav:hover,
+        .fav:focus {color: inherit;
                   font-size: 18px;   
                   border: none;
                   color: white;
@@ -96,7 +97,7 @@
                      transform: rotate(360deg) scale(2, 2); }
         span    {color:rgb(255, 113, 113);}
         em      {color:rgb(136, 117, 243)}
-        nav .hell   {text-decoration: none;
+        nav .fav   {text-decoration: none;
                  color:cornsilk;
                  padding-right: 15px;
                  padding-left: 15px;
@@ -107,7 +108,7 @@
                  padding: 14px 16px;
                  text-decoration: none;
                  }
-        .hell:hover {color:azure;}
+        .fav:hover {color:azure;}
         input:hover {color:rgb(90, 5, 146)}
         .dropdown:hover{  background-color:#68aef5;
                         color:#ecdc63; 
@@ -116,10 +117,22 @@
         .gal {display:inline;}
         .galg { position: absolute;
                 display: inline;
-                top:500px;
+                top:320px;
                 right:100px;
                 bottom:100px;
                 left:800px;}
+        .musicSpan {position: absolute;
+                display: inline;
+                top:500px;
+                bottom:100px;
+                left:200px;
+                text-align: left;}
+        .musicR {position: absolute;
+                display: inline;
+                top:550px;
+                bottom:100px;
+                left:200px;
+                text-align: left;}
         .frame { border-color: rgb(202, 153, 252) rgb(166, 252, 144);
                  border-image:none;
                  border-radius: 50px 0 50px 0;
@@ -155,6 +168,34 @@
                      font-size:14px;
                      line-height:20px;
                    } 
+        .contentMovies {margin-top: 50px;
+                        margin-bottom:60px;
+                        width:90%;
+                        text-align:left;
+                        font-size:14px;
+                        line-height:20px;
+                        }
+        .contentMusic {margin-top: 50px;
+                     margin-bottom:60px;
+                     width:900px;
+                     text-align:justify;
+                     font-size:14px;
+                     line-height:20px;}
+        #Music img {margin-left: 2%;
+                    margin-right: 2%;
+                    z-index: 1;
+                    position:relative;}
+        #Music img:hover {width:270px;
+                         height:320px;
+                         transition: all 0.5s ease 0s;}
+        .spanMusic {z-index: 2;
+                    opacity: 1;
+                    position:absolute;}
+        summary    {
+                    background:#8192a8;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    width: 40%;}
         .contentgal  {
                      margin-top: 50px;
                      margin-bottom:60px;
@@ -165,8 +206,11 @@
                    }    
         .btn    { 
                  vertical-align:250px;
-                 
-                 }                 
+                 background-color: mediumpurple;
+                 transition-duration: 0.4s;
+                 }   
+        .btn:hover {background-color: rgb(73, 70, 70);
+                    border-radius:8px;}              
         div, form, p {
                        width:100%; 
                        max-width:1200px; 
@@ -197,7 +241,8 @@
         .imghome       {width:300px;;
                         height:300px;}
         .imghome:hover {width:380px;
-                        height: 380px;}
+                        height: 380px;
+                        transition: all 0.5s ease 0s;}
         .card p { background-color: rgb(194, 227, 248);
                     margin-bottom: .5em;
                     font-family: arial, helvetica, sans-serif; }
@@ -211,27 +256,27 @@
 
    <body id="body">
       <header class='start'>
-         <h1 class='h1'>Welcome to my first project using HTML5 and CSS3!</h1> 
+         <h1 class='h1'>Welcome to my first project!</h1> 
          <h2 class='h2'>This time,I'm making a personal web site so you all can get to know me! &#128516;</h2>
       </header>
       <header>
             <div>
                 <nav>
-                    <button type="button" id="H" onclick="content1()" class="starth hell" >HOME</button>
+                    <a  id="H" onclick="content1()" class="starth fav" >HOME</a>
                     <span class="dropdown">
-                     <button type="button" class="droplist hell ">FAVORITE THINGS 
+                     <a class="droplist fav ">FAVORITE THINGS 
                        <i class="fa fa-caret-down"></i>
-                     </button>
+                     </a>
                      <span class="dropdown-content ">
-                       <button class="hell" type="button" id="M" onclick="content2()">MUSIC</button>
-                       <button class="hell" type="button" id="MO"  onclick="content3()">MOVIES</button>
-                       <button class="hell" type="button" id="F" onclick="content4()">FOOD</button>
+                       <a class="fav" id="M" onclick="content2()">MUSIC &#127928;</a>
+                       <a class="fav" id="MO"  onclick="content3()">MOVIES &#127910;</a>
+                       <a class="fav" id="F" onclick="content4()">FOOD &#127858;</a>
                      </span>
                     </span>
-                    <button class="hell" type="button" id="G" onclick="content6()">GALLERY</button>
-                    <button class="hell" type="button" id="B" onclick="content7()">BLOG</button>
-                    <button class="hell" type="button" id="S" onclick="content8()">SURVEY</button>
-                    <button class="hell" type="button" id="C" onclick="content9()">CONTACT INFO</button>
+                    <a class="fav" id="G" onclick="content6()">GALLERY</a>
+                    <a class="fav" id="B" onclick="content7()">BLOG</a>
+                    <a class="fav" id="S" onclick="content8()">SURVEY</a>
+                    <a class="fav" id="C" onclick="content9()">CONTACT INFO</a>
                 </nav>
             </div>
       </header>
@@ -277,137 +322,370 @@
         </div>
 
         <div id="Favorite" >
-            <div>
-              <div class="content div" id="Music">
-                <details >
-                    <summary ><strong>MUSIC &#127928;</strong></summary>
-                    <p>Mostly I listen to all kinds of music, depending on my day, but my absolute
-                        all time favorite genres are rock and metal.
-                          <details>
-                             <summary style="text-indent: 1em;">ROCK MUSIC</summary>
-                                <details>
-                                    <summary style="text-indent: 2em;">Favorite bands</summary>
-                                    <ul>
-                                        <li><a href="https://www.paramore.net/splash?ref=https%3A//at.search.yahoo.com/">
-                                        Paramore</a></li>
-                                        <li><a href="https://www.the-scorpions.com/">
-                                        Scorpions</a></li>
-                                        <li><a href="https://systemofadown.com/">
-                                        System of a down</a></li>
-                                    </ul>
-                                </details>
-                                <details>
-                                    <summary style="text-indent: 2em;">Favorite songs</summary>
-                                    <ul>
-                                        <li><a href="https://www.youtube.com/watch?v=_FrOQC-zEog&ab_channel=HELLOSEMPA">
-                                        Pink Floyd-Comfortably Numb</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=oR4uKcvQbGQ&ab_channel=InnerMusicLove">
-                                        Boston-More Than A Feeling</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=egMWlD3fLJ8&ab_channel=RetrospectiveSoundtrack">
-                                        Steppenwolf-Born To Be Wild</a></li>
-                                    </ul>
-                                </details>
-                            </details>
-                          <details>
-                              <summary style="text-indent: 1em;">METAL</summary>
-                              <details>
-                                <summary style="text-indent: 2em;">Favorite bands</summary>
-                                <ul>
-                                    <li><a href="https://www.blacksabbath.com/welcome.html">
-                                    Black Sabbath</a></li>
-                                    <li><a href="https://www.disturbed1.com/">Disturbed</a></li>
-                                    <li><a href="https://www.metallica.com/">Metallica</a></li>
-                                </ul>
-                              </details>
-                              <details>
-                                <summary style="text-indent: 2em;">Favorite songs</summary>
-                                <ul>
-                                    <li><a href="https://www.youtube.com/watch?v=J51LPlP-s9o&ab_channel=gibsonscottyozzy">
-                                    Iron Maiden-Hallowed be thy name</a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=fMAAMfHgO4Q&ab_channel=OzzyOsbourne">
-                                    Ozzy Osbourn-Under the graveyard</a></li>
-                                    <li><a href="https://www.youtube.com/watch?v=S5TnPjOd_To&ab_channel=JacobWright">
-                                    Metallica-Wherever I may roam</a></li>
-                                </ul>
-                              </details>
-                          </details>
-                    </p>
-                </details>
-              </div>
-              <div id="Movies" class="content div">
-                <details >
-                    <summary>MOVIES &#127910;</summary>
-                        <details>
-                            <summary style="text-indent: 1em;"><mark>BIG</mark>Horror Fan</summary>
-                            <p>Here are the posters of some of my favorite horror movies.</p>
-                            <p>
-                                <figure>
-                                    <img src="insidious.jpg" height="230" width="230" alt="Insidious movie poster">
-                                    <figcaption><em>Poster for the movie 'INSIDIOUS'</em></figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="getout.jpg" height="230" width="230" alt="Get Out movie poster">
-                                    <figcaption><em>Poster for the movie 'GET OUT'</em></figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="sinister.jpg" height="230" width="230" alt="Sinister movie poster">
-                                    <figcaption><em>Poster for the movie 'SINISTER'</em></figcaption>
-                               </figure>
-                            </p>
-                        </details>
-                        <details>
-                            <summary style="text-indent: 1em;">Other must-watch movies</summary>
-                                <figure>
-                                    <img src="windriver.jpg" height="230" width="230" alt="Wind River">
-                                    <figcaption><em>Poster for the movie 'WIND RIVER'</em></figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="seven.jpg" height="230" width="230" alt="Seven">
-                                    <figcaption><em>Poster for the movie 'SEVEN'</em></figcaption>
-                                </figure>
-                                <figure>
-                                    <img src="zodiac.jpg" height="230" width="230" alt="Zodiac">
-                                    <figcaption><em>Poster for the movie 'ZODIAC'</em></figcaption>
-                                </figure>
-                        </details>
-                </details>
-              </div>
-              <div id="Food" class="content div">
-                <details >
-                    <summary>FOOD &#127858;</summary>
-                        <details>
-                            <summary style="text-indent: 1em;">VEGGIE WRAP</summary>
-                                <details>
-                                    <summary style="text-indent: 2em;">Image</summary>
-                                    <figure>
-                                        <img src="veggie.jpg" width="600" height="300" alt="Veggie Wrap">
-                                        <figcaption><em>Veggie Wrap</em></figcaption>
-                                    </figure>
-                                </details>
-                                <details>
-                                    <summary style="text-indent: 2em;">Recipe</summary>
-                                    <p>Click<a href="https://www.culinaryhill.com/ultimate-veggie-wrap/"> 
-                                    <strong>here</strong></a>for the recipe</p>
-                                </details>
-                        </details>
-                        <details>
-                            <summary style="text-indent: 1em;">CHICKEN CURRY</summary>
-                                <details>
-                                    <summary style="text-indent: 2em;">Image</summary>
-                                    <figure>
-                                        <img src="curry.jpg" width="300" height="300" alt="Image for chicken curry">
-                                        <figcaption><em>Chicken curry</em></figcaption>
-                                    </figure>
-                                </details>
-                                <details>
-                                    <summary style="text-indent: 2em;">Recipe</summary>
-                                    <p>Click<a href="https://www.cookingclassy.com/chicken-curry/""> 
-                                    <strong>here</strong></a>for the recipe</p>
-                                </details>
-                        </details>
-                </details>
-              </div>
+            <div class="div contentMusic " id="Music">
+                <h1 style="text-align: center;"><strong>PICK A GENRE</strong></h1>
+                <br>
+                <br>
+                <img style="border-radius:8px" src="rockim1.jpg" alt="rock music" id='imagerock' width = "250" height = "300">
+                <img style="border-radius:8px" src="metalim1.png" alt="metal music" id='imagemetal' width = "250" height = "300">
+                <img style="border-radius:8px" src="popim1.jpg" alt="pop music" id='imagepop' width = "250" height = "300">
+            </div >
+            <div class="div contentMusic" id="RockM">
+                <h1 style="text-align: center;"><strong>SCORPIONS</strong></h1>
+                <br>
+                <br>
+                <div style="text-align: end;">
+                    <ul class="leftcolumn"  style="display:inline-table; text-align:left">Some of their greatest hits include:
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=n4RjJKxsamQ&ab_channel=ScorpionsVEVO"><em>Wind of change</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=FywkdijLj_E&ab_channel=Sgt_Mitnick"><em>Still loving you</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=UCxgbOBVSfM&ab_channel=Scorpions"><em>Rock You Like a Hurricane</em></a></li>
+                    </ul>
+                    <span class="leftcolumn musicSpan ">You can listen to their song 'Still loving you' just bellow.</span>
+                    <audio controls class="leftcolumn musicR" >
+                        <source src="Scorpions - Still Loving You HQ.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                    <p class="leftcolumn musicR" style="top:650px">For more information, visit their <a href="https://www.the-scorpions.com/">web site.</a></p>
+                    <img style="border-radius:8px" src="scorpionsRock.jpg" alt="Scorpions" width="250" height="300">
+                    <br>
+                    <br>
+                    <p><strong>Scorpions</strong> are a German hard rock band formed in <mark>1965</mark> in Hanover by Rudolf Schenker.
+                        Since the band's inception, its musical style has ranged from hard rock to heavy 
+                        metal.The lineup from 1979 to 1992 was the most successful incarnation of the group, 
+                        and included Klaus Meine (vocals), Rudolf Schenker (rhythm guitar), Matthias Jabs (lead guitar), 
+                        Francis Buchholz (bass), and Herman Rarebell (drums). The band's only continuous member has been 
+                        Schenker, although Meine has appeared on all of Scorpions' studio albums, while Jabs has been a 
+                        consistent member since 1979, and bassist Paweł Mąciwoda and drummer Mikkey Dee have been in the 
+                        band since 2003 and 2016 respectively.</p>
+                </div>
+                <br>
+                <br>
+                <h1 style="text-align: center;"><strong>DEF LEPPARD</strong></h1>
+                <br>
+                <br>
+                <div style="text-align: end;">
+                    <ul class="leftcolumn"  style="display:inline-table; text-align:left">Some of their greatest hits include:
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=im70eF8x14U&ab_channel=DefLeppard-Topic"><em>Love bites</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=yMzyleT2FqY&ab_channel=DefLeppardVEVO"><em>Hysteria</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=ecFPU--vvf0&ab_channel=DEFLEPPARD"><em>Animal</em></a></li>
+                    </ul>
+                    <span class="leftcolumn musicSpan " style="top:1080px">You can listen to their song 'Hysteria' just bellow.</span>
+                    <audio controls class="leftcolumn musicR"style="top:1120px" >
+                        <source src="Def Leppard - Hysteria (Long Version).mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                    <p class="leftcolumn musicR" style="top:1200px">For more information, visit their <a href="https://www.defleppard.com/">web site.</a></p>
+                    <img style="border-radius:8px" src="deflepard.jpg" alt="Def Leppard" width="300" height="300">
+                    <br>
+                    <br>
+                    <p><strong>Def Leppard</strong>are an English rock band formed 
+                        in <mark>977</mark> in Sheffield. Since 1992, the band has consisted of Joe Elliott 
+                        (lead vocals), Rick Savage (bass, backing vocals), Rick Allen (drums, backing vocals), 
+                        Phil Collen (guitars, backing vocals), and Vivian Campbell (guitars, backing vocals). 
+                        They established themselves as part of the new wave of British heavy metal movement of the early 1980s.
+                        The band's greatest commercial success came between the early 1980s and the early 1990s. 
+                        Their first album, 1980's On Through the Night, reached the Top 15 in the UK but received
+                         little notice elsewhere.</p>
+                </div>
             </div>
+            <div class="div contentMusic" id="MetalM">
+                <h1 style="text-align: center;"><strong>BLACK SABBATH</strong></h1>
+                <br>
+                <br>
+                <div style="text-align: end;">
+                    <ul class="leftcolumn"  style="display:inline-table; text-align:left">Some of their greatest hits include:
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=0qanF-91aJo&ab_channel=BlackSabbath"><em>Paranoid</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=vmV8niW5GXs&ab_channel=LolaLupino"><em>Solitude</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=fWISIJ68-qU&ab_channel=RPTN"><em>Voodoo</em></a></li>
+                    </ul>
+                    <span class="leftcolumn musicSpan ">You can listen to their song 'Voodoo' just bellow.</span>
+                    <audio controls class="leftcolumn musicR" >
+                        <source src="Black Sabbath - Voodoo.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                    <p class="leftcolumn musicR" style="top:650px">For more information, visit their <a href="https://www.blacksabbath.com/welcome.html">web site.</a></p>
+                    <img style="border-radius:8px" src="blacksab.jpg" alt="Black Sabbath" width="350" height="300">
+                    <br>
+                    <br>
+                    <p><strong>Black Sabbath</strong>were an English rock band 
+                        formed in Birmingham in <mark>1968</mark> by guitarist Tony Iommi, drummer Bill Ward, 
+                        bassist Geezer Butler and vocalist Ozzy Osbourne. They are often cited as 
+                        pioneers of heavy metal music.[1] The band helped define the genre with 
+                        releases such as Black Sabbath (1970), Paranoid (1970), and Master 
+                        of Reality (1971). The band had multiple line-up changes following Osbourne's 
+                        departure in 1979, with Iommi being the only constant member throughout its history.
+                        After previous iterations of the group called the Polka Tulk Blues Band and Earth, 
+                        the band settled on the name Black Sabbath in 1969. 
+                        They distinguished themselves through occult themes with horror-inspired 
+                        lyrics and tuned-down guitars.</p>
+                </div>
+                <br>
+                <br>
+                <h1 style="text-align: center;"><strong>IRON MAIDEN</strong></h1>
+                <br>
+                <br>
+                <div style="text-align: end;">
+                    <ul class="leftcolumn"  style="display:inline-table; text-align:left">Some of their greatest hits include:
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=J51LPlP-s9o&ab_channel=gibsonscottyozzy"><em>Hallowed be thy name</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=bePCRKGUwAY&ab_channel=IronMaiden-Topic"><em>Fear of the dark</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=_WCCVqkTI9Q&ab_channel=IronMaiden-Topic"><em>Number of the beast</em></a></li>
+                    </ul>
+                    <span class="leftcolumn musicSpan " style="top:1080px">You can listen to their song 'Hallowed be thy name' just bellow.</span>
+                    <audio controls class="leftcolumn musicR"style="top:1120px" >
+                        <source src="Hallowed Be Thy Name (2015 Remaster).mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                    <p class="leftcolumn musicR" style="top:1200px">For more information, visit their <a href="https://www.ironmaiden.com/">web site.</a></p>
+                    <img style="border-radius:8px" src="ironm.jpg" alt="Iron Maiden" width="350" height="300">
+                    <br>
+                    <br>
+                    <p><strong>Iron Maiden</strong>are an English heavy metal 
+                        band formed in Leyton, East London, in <mark>1975</mark> by bassist 
+                        and primary songwriter Steve Harris. The band's discography 
+                        has grown to 40 albums, including 16 studio albums, 13 live 
+                        albums, four EPs, and seven compilations.
+                        Pioneers of the new wave of British heavy metal, 
+                        Iron Maiden achieved initial success during the early 1980s. 
+                        After several line-up changes, the band went on to release a 
+                        series of UK and US platinum and gold albums, including 1982's 
+                        The Number of the Beast, 1983's Piece of Mind, 1984's Powerslave, 
+                        1985's live release Live After Death, 1986's Somewhere in Time, and 
+                        1988's Seventh Son of a Seventh Son. Since the return of lead vocalist 
+                        Bruce Dickinson and guitarist Adrian Smith in 1999, the band has undergone 
+                        a resurgence in popularity, with a series of new albums and tours.</p>
+                </div>
+            </div>
+            <div class="div contentMusic" id="PopM">
+                <h1 style="text-align: center;"><strong>ABBA</strong></h1>
+                <br>
+                <br>
+                <div style="text-align: end;">
+                    <ul class="leftcolumn"  style="display:inline-table; text-align:left">Some of their greatest hits include:
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=iyIOl-s7JTU&ab_channel=ForbiddenInGermany2"><em>The winner takes it all</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=cvChjHcABPA&ab_channel=AbbaVEVO"><em>SOS</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=unfzfe8f9NI&ab_channel=AbbaVEVO"><em>Mamma Mia</em></a></li>
+                    </ul>
+                    <span class="leftcolumn musicSpan ">You can listen to their song 'Mamma Mia' just bellow.</span>
+                    <audio controls class="leftcolumn musicR" >
+                        <source src="Abba - Mamma Mia (Official Video).mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                    <p class="leftcolumn musicR" style="top:650px">For more information, visit their <a href="https://abbasite.com/">web site.</a></p>
+                    <img style="border-radius:8px" src="abba.jpg" alt="Scorpions" width="400" height="300">
+                    <br>
+                    <br>
+                    <p><strong>ABBA</strong> are a Swedish pop group formed 
+                        in Stockholm in <mark>1972</mark> by Agnetha Fältskog, Björn Ulvaeus, 
+                        Benny Andersson, and Anni-Frid Lyngstad. The group's name is an 
+                        acronym of the first letters of their first names. They became 
+                        one of the most commercially successful acts in the history of popular 
+                        music, topping the charts worldwide from 1974 to 1983. In 1974, ABBA was 
+                        Sweden's first winner of the Eurovision Song Contest, with the song "Waterloo", 
+                        which in 2005 was at chosen as the best song in the competition's history as part 
+                        of the 50th anniversary celebration of the contest.</p>
+                </div>
+                <br>
+                <br>
+                <h1 style="text-align: center;"><strong>WHITNEY HOUSTON</strong></h1>
+                <br>
+                <br>
+                <div style="text-align: end;">
+                    <ul class="leftcolumn"  style="display:inline-table; text-align:left">Some of her greatest hits include:
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=eH3giaIzONA&ab_channel=whitneyhoustonVEVO"><em>I wanna dance with somebody</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=3JWTaaS7LdU&ab_channel=whitneyhoustonVEVO"><em>I will always love you</em></a></li>
+                        <li style="text-indent: 1em;"><a href="https://www.youtube.com/watch?v=FxYw0XPEoKE&ab_channel=whitneyhoustonVEVO"><em>I have nothing</em></a></li>
+                    </ul>
+                    <span class="leftcolumn musicSpan " style="top:1080px">You can listen to their song 'I have nothing' just bellow.</span>
+                    <audio controls class="leftcolumn musicR"style="top:1120px" >
+                        <source src="Whitney Houston - I Have Nothing (Official HD Video).mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                    </audio>
+                    <p class="leftcolumn musicR" style="top:1200px">For more information, visit their <a href="https://www.whitneyhouston.com/">web site.</a></p>
+                    <img style="border-radius:8px" src="whitney.jpg" alt="Whitney Houston" width="300" height="300">
+                    <br>
+                    <br>
+                    <p>Whitney Elizabeth Houston (August 9, 1963 – February 11, 2012) 
+                        was an American singer and actress. She was certified as the most awarded 
+                        female artist of all time by Guinness World Records and is one of the 
+                        best-selling recording artists of all time, with sales of over 200 million 
+                        records worldwide. Houston released seven studio albums and two soundtrack albums, 
+                        all of which have been certified diamond, multi-platinum, platinum, or gold by the 
+                        Recording Industry Association of America (RIAA). She is regarded as one of the greatest 
+                        artists of all time. Her crossover appeal on the popular music charts as well as her 
+                        prominence on MTV influenced several African-American female artists.</p>
+                </div>
+            </div>
+            <div id="Movies" class="contentMovies div">
+                <h1 style="text-align: center;">HORROR RECOMENDATION</h1>
+                <h2 style="text-align: center;">INSIDIOUS</h2>
+                <br>
+                <br>
+                <img style="border-style:groove;" src="insidious.jpg" alt="Insidious" width="390" height="390">
+                <ul class="rightcolumn"  style="display:inline-table; text-align:left">Trivia:
+                    <li>The film was shot in just three weeks.</li>
+                    <li>Thirty-three violins were used for the theme music.</li>
+                    <li>The film won two Fright Meter Awards in 2011, Best Horror Movie 
+                        and Best Supporting Actress for Lin Shaye.</li> 
+                </ul>
+                <ul class="rightcolumn"  style="display:inline-table; text-align:left;">Ratings given by:
+                    <li>IMBD: <mark>6.8/10</mark></li>
+                    <ul>Rotten Tomatoes:</ul>
+                        <li>Tomatometer: <mark>66/100</mark></li>
+                        <li>Audience score: <mark>62/100</mark></li>
+                </ul>
+                <p style="display:inline;text-align:left; ">Plot summary:<br>
+                    A gripping story of a family in search of help for their son,
+                     Dalton, who fell into a coma after a mysterious incident in the attic. 
+                     Little do they know that there is much more to this endless sleep than 
+                     meets the eye as they explore the paranormal, and rediscover the past; the key 
+                     to getting their son back once and for all.</p>
+                <br>
+                <br>
+                <h1 style="text-align: center;">THRILLER RECOMENDATION</h1>
+                <h2 style="text-align: center;">SEVEN</h2>
+                <br>
+                <br>
+                <img style="border-style:groove;" src="seven.jpg" alt="Seven" width="390" height="390">
+                <ul class="rightcolumn"  style="display:inline-table; text-align:left">Trivia:
+                    <li>David Fincher told Kevin Spacey and Brad Pitt "this is not going to be the movie that you're 
+                        remembered for, but it may be a movie you're incredibly proud of."</li>
+                    <li>Brad Pitt bought his own ties for the movie. He wanted Mills to have poor fashion sense.</li>
+                    <li>This was the seventh highest grossing film of 1995.</li> 
+                </ul>
+                <ul class="rightcolumn"  style="display:inline-table; text-align:left;">Ratings given by:
+                    <li>IMBD: <mark>8.6/10</mark></li>
+                    <ul>Rotten Tomatoes:</ul>
+                        <li>Tomatometer: <mark>82/100</mark></li>
+                        <li>Audience score: <mark>95/100</mark></li>
+                </ul>
+                <p style="display:inline;text-align:left; ">Plot summary:<br>
+                    A film about two homicide detectives' (Morgan Freeman and Brad Pitt) 
+                    desperate hunt for a serial killer who justifies his crimes as absolution 
+                    for the world's ignorance of the Seven Deadly Sins. The movie takes us from 
+                    the tortured remains of one victim to the next as the sociopathic "John Doe" 
+                    (Kevin Spacey) sermonizes to Detectives Somerset and Mills -- one sin at a time.</p>
+            </div>
+            <div id="Food" class="contentMovies div">
+                <h1 style="text-align: center;">CHEAP AND EASY DINNER RECIPES SO YOU NEVER HAVE TO COOK A BORING MEAL AGAIN!</h1>
+                <br>
+                <h2 style="text-align: center;">CHICKEN FAJITAS</h2>
+                <br>
+                <img style="border-radius:8px" src="chicken.jpg" alt="Chicken fajitas" width="400" height="400">
+                <div class="rightcolumn"  style="display:inline-table; text-align:left">
+                    <table style="border-collapse: collapse;" border=1>
+                        <thead>
+                           <tr style="background-color:rgb(36, 36, 155)"> 
+                              <th>Servings</th> 
+                              <th>Prep time</th>
+                              <th>Total time</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>6</td> 
+                              <td>15 minutes</td>
+                              <td>1 hour</td>
+                           </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <details>
+                        <summary >INGREDIENTS</summary>
+                            <ul>
+                                <li>1/2 c. plus 1 tbsp. extra-virgin olive oil</li>
+                                <li>1/4 c. lime juice, from about 3 limes </li>
+                                <li>2 tsp. cumin</li>
+                                <li>1/2 tsp. crushed red pepper flakes</li>
+                                <li>1 lb. boneless skinless chicken breasts</li>
+                                <li>Kosher salt</li>
+                                <li>Freshly ground black pepper</li>
+                                <li>2 bell peppers, thinly sliced</li>
+                                <li>1 large onion, thinly sliced</li>
+                                <li>Tortillas, for serving</li>
+                            </ul>
+                    </details>
+                    <br>
+                    <details>
+                        <summary >DIRECTIONS</summary>
+                            <ol>
+                                <li>In a large bowl, whisk together 1⁄2 cup oil, lime juice, cumin, and 
+                                    red pepper flakes. Season chicken with salt and pepper, then add to bowl 
+                                    and toss to coat. Let marinate in the fridge at least 30 minutes and up to 2 hours.</li>
+                                <li>When ready to cook, heat remaining tablespoon oil in a large skillet over medium heat.
+                                    Add chicken and cook until golden and cooked through, 8 minutes per side. Let rest 10 minutes, 
+                                    then slice into strips.</li>
+                                <li>Add bell peppers and onion to skillet and cook until soft, 5 minutes. 
+                                    Add chicken and toss until combined. Serve with tortillas. </li>
+                            </ol>
+                    </details>  
+                </div>
+                <br>
+                <h2 style="text-align: center;">CHICKEN TACOS</h2>
+                <br>
+                <img style="border-radius:8px" src="tacos.jpg" alt="Chicken fajitas" width="400" height="400">
+                <div class="rightcolumn"  style="display:inline-table; text-align:left">
+                    <table style="border-collapse: collapse;" border=1>
+                        <thead>
+                           <tr style="background-color:rgb(36, 36, 155)"> 
+                              <th>Servings</th> 
+                              <th>Prep time</th>
+                              <th>Total time</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td>4</td> 
+                              <td>10 minutes</td>
+                              <td>30 minutes</td>
+                           </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <details>
+                        <summary >INGREDIENTS</summary>
+                            <details>
+                                <summary style="text-indent: 1em;">For the tacos</summary>
+                                    <ul>
+                                        <li>3 tbsp. extra-virgin olive oil</li>
+                                        <li>4 boneless skinless chicken breasts, cut into 1" strips</li>
+                                        <li>Kosher salt</li>
+                                        <li>Freshly ground black pepper</li>
+                                        <li>2 tsp. chili powder</li>
+                                        <li>2 tsp. cumin</li>
+                                        <li>1/2 tsp. garlic powder</li>
+                                        <li>1/4 tsp. paprika</li>
+                                        <li>1/4 tsp. cayenne</li>
+                                        <li>8 corn tortillas, warmed</li>
+                                    </ul>
+                            </details>
+                            <details>
+                                <summary style="text-indent: 1em;">Toppings</summary>
+                                    <ul>
+                                        <li>Sour cream</li>
+                                        <li>Thinly sliced red onion</li>
+                                        <li>Diced tomatoes</li>
+                                        <li>Shredded Monterey Jack</li>
+                                        <li>Diced avocados</li>
+                                        <li>Fresh cilantro</li>
+                                        <li>Lime wedges</li>
+                                    </ul>
+                            </details>
+                    </details>
+                    <br>
+                    <details>
+                        <summary >DIRECTIONS</summary>
+                            <ol>
+                                <li>In a large skillet over medium heat, heat oil. Season chicken with salt 
+                                    and pepper and add to skillet. Cook until golden, 6 minutes. Add spices 
+                                    and stir until coated, 1 minute more. If needed, add a little more oil or 
+                                    water to help spices coat chicken. </li>
+                                <li>Build tacos: In tortillas, layer chicken and desired toppings. 
+                                    Serve with lime wedges.</li>
+                            </ol>
+                    </details>  
+                </div>
+            </div>
+                
         </div>
 
       <div class="contentgal div" id="Gallery" >
@@ -416,18 +694,17 @@
             <img class="frame" src="slika2.png" alt="slika2" id='image' height="500px" width="400px">
             <button type="button" class="btn" onclick=IMF()>NEXT</button>
             <div class="gal">
-                <button type="button" id="heart" style="color:black;" onclick=Like()>&hearts;</button>
+                <button type="button" id="heart" style="color:black;" onclick=Like(countm,likeim)>&hearts;</button>
                 <p class="gal" id="in" ></p>
             </div>
             <div >
                 <form class="galg">
-                    <textarea name = "comments" rows = "3" cols = "30" id="com" placeholder="Comment here"></textarea> 
-                    <button type="button" id="comm" onclick=Coment() >Comment!</button>
-                    <ul style="background-color: rgb(218, 253, 231); width:200px;" id="rez0"></ul>
-                    <ul style="background-color: rgb(218, 253, 231); width:200px;" id="rez1"></ul>
-                    <ul style="background-color: rgb(218, 253, 231); width:200px;" id="rez2"></ul>
-                    <ul style="background-color: rgb(218, 253, 231); width:200px;" id="rez3"></ul>
-                    <ul style="background-color: rgb(218, 253, 231); width:200px;" id="rez4"></ul>
+                    <textarea style="background-color: rgb(187, 223, 126);border-radius: 8px;" name = "comments" rows = "3" cols = "30" id="com" placeholder="Comment here"></textarea> 
+                    <button style="background-color: darkslategray;border-radius: 4px;" type="button" id="comm" >Comment!</button>
+                    <ul id="mestozakom">
+                        <div id="rez0"></div>
+                        
+                    </ul>
                 </form>
             </div>
         </div>
@@ -511,16 +788,12 @@
                 <input type="text" size="20" id="blogwriter"><br>
             </label></p>
             <p>
-                <input type = "button" value = "Submit" onclick="BlogP()">
+                <input id="buttonBlog" type = "button" value = "Submit">
                 <input type = "reset" value = "Clear">
             </p>
-            <br><br><br>
-            <div class="h2" style="margin-bottom: 10px;" id="blognamehere"></div>
-            <br>
-            <div class="card middlecolumn div" style="width:800px; height:200px; overflow:scroll; background-color:rgb(194, 227, 248); " id="blogposthere"></div>
-            <br>
-            <div style="margin-left: 700px;" id="blogwriterhere"></div>
-            <div style="margin-left: 700px;" id="blogtime"></div>
+            <br><br><br><hr>
+            <div id="newPost">
+            </div>
             <br>
             <p>Or send me your story via email:<a href="mailto:petrovskamartina20@yahoo.com">
                 petrovskamartina20@yahoo.com</a></p>
@@ -632,20 +905,79 @@
         </address>
       </div>
       <script type="text/javascript">
+        $(document).ready(function () {
+        $('#imagerock').click(function () {
+            $('#PopM').hide();
+            $('#Music').hide();
+            $('#MetalM').hide();
+            $('#RockM').show();
+            }
+            )});
+      $(document).ready(function () {
+        $('#imagemetal').click(function () {
+            $('#PopM').hide();
+            $('#Music').hide();
+            $('#RockM').hide();
+            $('#MetalM').show();}
+            )});
+      $(document).ready(function () {
+        $('#M').click(function () {
+            $('#Music').show();
+            $('#RockM').hide();
+            $('#MetalM').hide();
+            $('#PopM').hide();}
+            )});
+      $(document).ready(function () {
+        $('#imagepop').click(function () {
+            $('#PopM').show();
+            $('#Music').hide();
+            $('#RockM').hide();
+            $('#MetalM').hide();}
+            )});
+      $(document).ready(function () {
+          if(localStorage.getItem('listakom'))
+            $('#mestozakom').html(localStorage.getItem('listakom'));
+          $('#comm').click(function() {
+              var p=new Date();
+              $('#mestozakom').prepend('<li id="komentar">'+com.value+'<br>'+p.toLocaleString()+
+                '<button style="display:inline" type="button" class="delete">X</button'+'</li>');
+              localStorage.setItem('listakom',$('#mestozakom').html());
+               });
+          $(".delete").on('click',function() {
+              $('#komentar').remove();
+              localStorage.setItem('listakom',$('#mestozakom').html());})})
+      $(document).ready(function(){
+          if(localStorage.getItem('blogovi')){
+            $('#newPost').html(localStorage.getItem('blogovi'));};
+          $('#buttonBlog').click(function(){
+            var n=document.getElementById("blogname");
+            var p=document.getElementById("blogpost");
+            var bn=document.getElementById("blogwriter");
+            var time=new Date();
+              $('#newPost').prepend('<div class="h2" style="margin-bottom: 10px;">'+n.value+'</div>'+
+                '<br>'+
+                '<div class="card middlecolumn" style="width:800px; height:200px; overflow:scroll; background-color:rgb(194, 227, 248); ">'+p.value+ '</div>'+
+                '<br>'+
+                '<div style="margin-left: 700px;">'+'By:'+bn.value + '</div>'+
+                '<div style="margin-left: 700px;">'+time.toLocaleString()+ '</div>'+'<br>'+'<hr>');
+                localStorage.setItem('blogovi',$('#newPost').html());
+          })
+      })
         var images =["slika2.png", "slika4.png", "slika1.jpg"];
         var imlen = images.length;
         var i=0;
+        var likeim=document.getElementById("heart");
         var likeim0=document.getElementById("heart");
         var likeim1=document.getElementById("heart");
         var likeim2=document.getElementById("heart");
-        var countim0d=5;
-        var countim0=localStorage.getItem("countKey");
-        localStorage.setItem("countKey0",countim0);
-        var countim1=0;
-        var countim2=0;
-        var comments=new Array();
-        let m=0;
-        var countcl=0;
+        var countim0=localStorage.getItem("countKey0");
+        localStorage.setItem("countKey00",countim0);
+        var countim1=localStorage.getItem("countKey1");
+        localStorage.setItem("countKey01",countim1);
+        var countim2=localStorage.getItem("countKey2");
+        localStorage.setItem("countKey02",countim2);
+        var pom;
+        var countm;
         var HH= document.getElementById("Home");
         var FF = document.getElementById( "Favorite" );
         var GG = document.getElementById( "Gallery" );
@@ -653,6 +985,9 @@
         var SS = document.getElementById( "Survey" );
         var CC = document.getElementById( "Contact" );
         var MU = document.getElementById( "Music" );
+        var MUR=document.getElementById("RockM");
+        var MUM=document.getElementById("MetalM");
+        var MUP=document.getElementById("PopM");
         var MO = document.getElementById( "Movies" );
         var FO = document.getElementById( "Food" );
         function content1()
@@ -662,8 +997,12 @@
                 SS.style.display="none";
                 CC.style.display="none";
                 MU.style.display="none";
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none";
                 MO.style.display="none";
                 FO.style.display="none";
+                surveyresponce.style.display="none";
               }
         function content2()
               { HH.style.display="none";
@@ -674,7 +1013,12 @@
                 MU.style.display="block";
                 MO.style.display="none";
                 FO.style.display="none";
-              }
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none";
+                surveyresponce.style.display="none";
+
+              }      
         function content3()
               { HH.style.display="none";
                 GG.style.display="none";
@@ -684,6 +1028,12 @@
                 MU.style.display="none";
                 MO.style.display="block";
                 FO.style.display="none";
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none";
+                surveyresponce.style.display="none";
+
+
               }
         function content4()
               { HH.style.display="none";
@@ -694,6 +1044,10 @@
                 MU.style.display="none";
                 MO.style.display="none";
                 FO.style.display="block";
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none"
+                surveyresponce.style.display="none";
               }
         function content6()
               { HH.style.display="none";
@@ -701,80 +1055,141 @@
                 BB.style.display="none";
                 SS.style.display="none";
                 CC.style.display="none";
+                MU.style.display="none";
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none";
+                MO.style.display="none";
+                FO.style.display="none";
+                surveyresponce.style.display="none";
               }
         function content7()
               { HH.style.display="none";
                 GG.style.display="none";
                 BB.style.display="block";
                 SS.style.display="none";
-                CC.style.display="none";}
+                CC.style.display="none";
+                MU.style.display="none";
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none";
+                MO.style.display="none";
+                FO.style.display="none";
+                surveyresponce.style.display="none";}
         function content8()
               { HH.style.display="none";
                 GG.style.display="none";
                 BB.style.display="none";
                 SS.style.display="block";
-                CC.style.display="none";}
+                CC.style.display="none";
+                MU.style.display="none";
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none";
+                MO.style.display="none";
+                FO.style.display="none";
+                surveyresponce.style.display="none";}
         function content9()
               { HH.style.display="none";
                 GG.style.display="none";
                 BB.style.display="none";
                 SS.style.display="none";
-                CC.style.display="block";}
-        function preview_image(event) {
-                        var reader = new FileReader();
-                        reader.onload = function(){
-                        var output = document.getElementById('output_image');
-                        output.src = reader.result;
-                        var im = document.getElementById("output_image");
-                        im.style.display="block";
-                        }
-                        reader.readAsDataURL(event.target.files[0]);
-                    }  
+                CC.style.display="block";
+                MU.style.display="none";
+                MUR.style.display="none";
+                MUM.style.display="none";
+                MUP.style.display="none";
+                MO.style.display="none";
+                FO.style.display="none";
+                surveyresponce.style.display="none";}
         function IMF() {
             i=i+1;
             if(i==imlen) {
                 i=0;
             }
             document.getElementById('image').src=images[i];
-            var likef = document.getElementById('heart');
-            likef.addEventListener("click",Like,false);
+            var likef = document.getElementById('heart'); 
+            if(likef.style.color=="red"){
+                    likef.style.color="black";
+                        }    
+            if(i==0){
+                var countms=localStorage.getItem("countKey00");}
+                else {
+                    if(i==1){
+                        var countms=localStorage.getItem("countKey01");
+                    }
+                    else
+                    var countms=localStorage.getItem("countKey02");
+                }
+                countm=parseInt(countms);
+            document.getElementById("in").innerHTML=countm;
+            likef.addEventListener("click",Like(countim[i],likeim[i]),false);           
             }
         function IMB(){
             i=i-1;
             if(i<0) {
             i=imlen-1;
             }
-            document.getElementById('image').src=images[i];  
+            document.getElementById('image').src=images[i]; 
+            var likef = document.getElementById('heart');
+            if(likef.style.color=="red"){
+                    likef.style.color="black";
+                        }
+            if(i==0){
+                var countms=localStorage.getItem("countKey00");}
+                else {
+                    if(i==1){
+                        var countms=localStorage.getItem("countKey01");
+                    }
+                    else
+                    var countms=localStorage.getItem("countKey02");
+                }
+                countm=parseInt(countms);
+            document.getElementById("in").innerHTML=countm;
+            likef.addEventListener("click",Like(countim[i],likeim[i]),false); 
             }
             
-        function Like() {
-                var countim0s=localStorage.getItem("countKey0");
-                countim0=parseInt(countim0s);
-                if(likeim0.style.color!="red"){
-                    likeim0.style.color="red";
-                    countim0++;
+        function Like(countm,likeim) {
+            if(i==0){
+                var countms=localStorage.getItem("countKey00");}
+                else {
+                    if(i==1){
+                        var countms=localStorage.getItem("countKey01");
+                    }
+                    else
+                    var countms=localStorage.getItem("countKey02");
+                }
+                countm=parseInt(countms);
+                if(likeim.style.color!="red"){
+                    likeim.style.color="red";
+                    countm++;
                     }
                     else{
-                        likeim0.style.color="black";
+                        likeim.style.color="black";
                         }    
-                document.getElementById("in").innerHTML=countim0;
-                localStorage.setItem("countKey",countim0);
+                document.getElementById("in").innerHTML=countm;
+                if(i==0){
+                    localStorage.setItem("countKey0",countm);
+                    }
+                else {
+                    if(i==1){
+                        localStorage.setItem("countKey1",countm);
+                        
+                    }
+                    else
+                    localStorage.setItem("countKey2",countm);
+                }
+                
             }   
         function Likedefault() {
                 likeim0.style.color="black";
                 document.getElementById("in").innerHTML=countim0;
                 }
+        var surveyresponce;
         window.addEventListener( "load", Likedefault, false );
-        function Likedefault1() {
-                likeim0.style.color="black";
-                countim0=countim0d;
-                localStorage.setItem("countKey0",countim0);
-                document.getElementById("in").innerHTML=countim0d;
-            }
-        window.addEventListener("loadstart",Likedefault1,true);
         function surveysays() {
-            var th=document.getElementById("thanks")
-            th.style.display="block";
+            surveyresponce=document.getElementById("thanks")
+            surveyresponce.style.display="block";
             SS.style.display="none";
             HH.style.display="none";
             GG.style.display="none";
@@ -783,8 +1198,11 @@
             MU.style.display="none";
             MO.style.display="none";
             FO.style.display="none";
+            MUR.style.display="none";
+            MUM.style.display="none";
+            MUP.style.display="none";
             var name=document.getElementById("names");
-            document.getElementById("thanks").innerHTML="Thank you for your submission"+ " "+ name.value +" "+"!";
+            surveyresponce.innerHTML="Thank you for your submission"+ " "+ name.value +" "+"!";
         }
         function startsubmit()
          {
@@ -792,46 +1210,7 @@
             button.addEventListener( "click",surveysays, false );
          } 
         window.addEventListener("load",startsubmit,false);
-        function Coment() {
-                if (m<5) {
-                    comments[m]=document.getElementById("com");
-                    document.getElementById("rez"+m).innerHTML=comments[m].value + "<br/>";
-                    com.value=com.placeholder;  
-                }
-                m++;
-            } 
-        function BlogP() {
-            var n=document.getElementById("blogname");
-            var p=document.getElementById("blogpost");
-            var bn=document.getElementById("blogwriter");
-            blogposthere.style.display="block";
-            var d=new Date();
-            var dn=d.getHours();
-            var dp=d.getMinutes();
-            var ds=d.getSeconds();
-            var dd=d.getDate();
-            var dm=d.getMonth();
-            var m=new Array();
-            m[0]="January";
-            m[1]="February";
-            m[2]="March";
-            m[3]="April";
-            m[4]="May";
-            m[5]="June";
-            m[6]="July";
-            m[7]="August";
-            m[8]="September";
-            m[9]="October";
-            m[10]="November";
-            m[11]="December";
-            var dmm=m[dm];
-            var dy=d.getFullYear();
-            document.getElementById("blognamehere").innerHTML=n.value;
-            document.getElementById("blogposthere").innerHTML=p.value;
-            document.getElementById("blogwriterhere").innerHTML="by"+" "+bn.value;
-            document.getElementById("blogtime").innerHTML=dn+":"+dp+":"+ds+" "+dd+" "+dmm+ " "+dy
-            p.value=p.placeholder;
-        }
-      </script>
+    </script>
+    
     </body>
 </html>
